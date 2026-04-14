@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --accent-green: #befc28; /* Felle lime groen */
+  --dark-bg: #050505;
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: white;
+  font-family: 'Inter', sans-serif; /* Zorg dat je Inter of Geist laadt via Google Fonts */
+  overflow-x: hidden;
+}
+
+/* De subtiele groene gloed op de achtergrond */
+.mesh-gradient {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(190, 252, 40, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(34, 197, 94, 0.05) 0%, transparent 40%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.text-gradient {
+  background: linear-gradient(to bottom right, #ffffff 30%, var(--accent-green));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.green-border-hover {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.green-border-hover:hover {
+  border-color: var(--accent-green);
+  box-shadow: 0 0 20px rgba(190, 252, 40, 0.1);
+}

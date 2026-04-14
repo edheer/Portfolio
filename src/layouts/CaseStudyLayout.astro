@@ -1,0 +1,454 @@
+---
+import MainLayout from './MainLayout.astro';
+import Footer from '../components/Footer.astro';
+import PasswordGate from '../components/PasswordGate.tsx';
+
+interface DownloadItem {
+  title: string;
+  file: string;
+  label?: string;
+}
+
+interface Props {
+  title: string;
+  client: string;
+  role: string;
+  timeline: string;
+  accent: string;
+  accentSoft: string;
+  kicker: string;
+  headline: string;
+  intro: string;
+  challenge?: string;
+  approach?: string;
+  process?: string[];
+  result?: string;
+  tools?: string[];
+  downloads?: DownloadItem[];
+}
+
+const {
+  title,
+  client,
+  role,
+  timeline,
+  accent,
+  accentSoft,
+  kicker,
+  headline,
+  intro,
+  challenge,
+  approach,
+  process = [],
+  result,
+  tools = [],
+  downloads = []
+} = Astro.props;
+
+const hasChallenge = Boolean(challenge);
+const hasApproach = Boolean(approach);
+const hasProcess = process.length > 0;
+const hasResult = Boolean(result);
+const hasTools = tools.length > 0;
+const hasDownloads = downloads.length > 0;
+---
+
+<MainLayout title={title}>
+  <PasswordGate client:load>
+    <section class="relative min-h-[75vh] lg:min-h-[85vh] w-full overflow-hidden flex flex-col justify-end pb-12 lg:pb-20">
+      <div class="absolute inset-0 -z-20">
+        <div
+          class="w-full h-full"
+          style={`background:
+            radial-gradient(circle at 20% 20%, ${accentSoft} 0%, transparent 30%),
+            radial-gradient(circle at 80% 70%, ${accentSoft} 0%, transparent 35%),
+            linear-gradient(to bottom, #0a0a0a 0%, #050505 100%);`}
+        ></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent z-20"></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto w-full px-5 md:px-6 relative z-30">
+        <div class="mb-8 flex items-center gap-4">
+          <a
+            href="/work"
+            class="group flex items-center gap-2 font-bold uppercase tracking-[0.35em] text-[10px]"
+            style={`color:${accent}`}
+          >
+            <span class="group-hover:-translate-x-1.5 transition-transform">←</span>
+            Portfolio Archive
+          </a>
+        </div>
+
+        <p class="text-[11px] uppercase tracking-[0.35em] mb-4" style={`color:${accent}`}>
+          {kicker}
+        </p>
+
+        <h1 class="text-[clamp(3rem,9vw,8rem)] font-black italic tracking-tight uppercase leading-[0.88] mb-6">
+          {headline}
+        </h1>
+
+        <p class="max-w-3xl text-white/65 text-base md:text-lg leading-7 md:leading-8 mb-10">
+          {intro}
+        </p>
+
+        <div class="flex flex-wrap gap-x-10 gap-y-6 border-t border-white/10 pt-8">
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-white/30 mb-2 italic">Client</p>
+            <p class="text-sm font-bold uppercase italic" style={`color:${accent}`}>{client}</p>
+          </div>
+
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-white/30 mb-2 italic">Role</p>
+            <p class="text-sm font-bold uppercase italic text-white/80">{role}</p>
+          </div>
+
+          <div>
+            <p class="text-[9px] font-bold uppercase tracking-widest text-white/30 mb-2 italic">Timeline</p>
+            <p class="text-sm font-bold uppercase italic text-white/80">{timeline}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto px-5 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 relative">
+      <aside class="hidden lg:block lg:col-span-3 h-fit sticky top-24 self-start">
+        <div class="space-y-8">
+          <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-white/20">Project Navigator</p>
+
+          <nav class="flex flex-col gap-4">
+            {hasChallenge && (
+              <a href="#challenge" class="group flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">
+                <span class="w-8 h-px bg-white/10 transition-all" style={`background:${accent}`}></span>
+                Challenge
+              </a>
+            )}
+
+            {hasApproach && (
+              <a href="#approach" class="group flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">
+                <span class="w-8 h-px bg-white/10 transition-all" style={`background:${accent}`}></span>
+                Approach
+              </a>
+            )}
+
+            {hasProcess && (
+              <a href="#process" class="group flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">
+                <span class="w-8 h-px bg-white/10 transition-all" style={`background:${accent}`}></span>
+                Process
+              </a>
+            )}
+
+            {hasResult && (
+              <a href="#result" class="group flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">
+                <span class="w-8 h-px bg-white/10 transition-all" style={`background:${accent}`}></span>
+                Result
+              </a>
+            )}
+
+            {hasDownloads && (
+              <a href="#downloads" class="group flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-white transition-all">
+                <span class="w-8 h-px bg-white/10 transition-all" style={`background:${accent}`}></span>
+                Documents
+              </a>
+            )}
+          </nav>
+
+          {hasTools && (
+            <div class="pt-10">
+              <div class="p-5 rounded-2xl border" style={`background:${accentSoft}; border-color:${accent}33`}>
+                <p class="text-[9px] font-bold uppercase tracking-widest mb-3" style={`color:${accent}`}>Toolkit</p>
+                <div class="flex flex-wrap gap-2">
+                  {tools.map((tool) => (
+                    <span class="text-[10px] text-white/75 bg-white/5 px-2.5 py-1 rounded border border-white/10 uppercase font-bold">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </aside>
+
+      <div class="lg:col-span-9 space-y-28 lg:space-y-40 pb-24 lg:pb-32">
+        {hasChallenge && (
+          <section id="challenge" class="scroll-mt-28 lg:scroll-mt-36">
+            <span class="font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block" style={`color:${accent}`}>// Challenge</span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-8 leading-[0.95]">
+              De context en <br /> de uitdaging
+            </h2>
+            <p class="text-lg md:text-xl text-white/70 leading-8 font-light max-w-3xl">
+              {challenge}
+            </p>
+          </section>
+        )}
+
+        {hasApproach && (
+          <section id="approach" class="scroll-mt-28 lg:scroll-mt-36">
+            <span class="font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block" style={`color:${accent}`}>// Approach</span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-8 leading-[0.95]">
+              Mijn aanpak <br /> en keuzes
+            </h2>
+            <p class="text-lg md:text-xl text-white/70 leading-8 font-light max-w-3xl">
+              {approach}
+            </p>
+          </section>
+        )}
+
+        {hasProcess && (
+          <section id="process" class="scroll-mt-28 lg:scroll-mt-36">
+            <span class="font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block" style={`color:${accent}`}>// Process</span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-10 leading-[0.95]">
+              Van analyse <br /> naar uitvoering
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {process.map((step, index) => (
+                <div class="p-6 md:p-8 bg-neutral-900/50 rounded-3xl border border-white/5">
+                  <p class="text-[10px] uppercase tracking-[0.3em] mb-3 font-bold" style={`color:${accent}`}>
+                    Step 0{index + 1}
+                  </p>
+                  <p class="text-sm md:text-base text-white/65 leading-7">
+                    {step}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {hasResult && (
+          <section id="result" class="scroll-mt-28 lg:scroll-mt-36">
+            <span class="font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block" style={`color:${accent}`}>// Result</span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-8 leading-[0.95]">
+              Uitkomst <br /> en reflectie
+            </h2>
+            <div class="p-8 md:p-12 rounded-[2rem] md:rounded-[3rem] border relative overflow-hidden" style={`background:${accentSoft}; border-color:${accent}33`}>
+              <p class="text-xl md:text-2xl leading-8 text-white/85 max-w-4xl">
+                {result}
+              </p>
+            </div>
+          </section>
+        )}
+
+        <slot />
+
+        {hasDownloads && (
+          <section id="downloads" class="scroll-mt-28 lg:scroll-mt-36">
+            <span class="font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block" style={`color:${accent}`}>// Documents</span>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-10 leading-[0.95]">
+              Verslagen, <br /> bijlagen en bestanden
+            </h2>
+
+            <div class="download-grid">
+              {downloads.map((doc) => (
+                <a
+                  class="download-card"
+                  href={doc.file}
+                  target="_blank"
+                  rel="noreferrer"
+                  style={`--case-accent:${accent}; --case-accent-soft:${accentSoft};`}
+                >
+                  {doc.label && <span class="download-label">{doc.label}</span>}
+                  <strong>{doc.title}</strong>
+                  <span class="download-action">Open document</span>
+                </a>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+    </div>
+
+    <Footer />
+  </PasswordGate>
+</MainLayout>
+
+<style is:global>
+  .case-section {
+    padding: 4rem 0;
+  }
+
+  .case-section p {
+    color: rgba(255, 255, 255, 0.74);
+    line-height: 1.85;
+  }
+
+  .section-heading {
+    margin-bottom: 2rem;
+  }
+
+  .section-heading h2 {
+    margin: 0.35rem 0 0;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .case-section h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.08rem;
+    line-height: 1.2;
+  }
+
+  .content-card p + p {
+    margin-top: 1rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.25rem;
+    color: var(--case-accent, #ffffff);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .case-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.95fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .case-grid--intro {
+    align-items: stretch;
+  }
+
+  .two-col-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .content-card,
+  .quote-card,
+  .case-meta-card,
+  .image-card,
+  .download-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1.75rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .content-card.compact {
+    height: 100%;
+  }
+
+  .quote-card p {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .case-meta-card ul,
+  .clean-list {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .case-meta-card li,
+  .clean-list li {
+    margin: 0.55rem 0;
+    color: rgba(255, 255, 255, 0.76);
+  }
+
+  .method-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .method-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .image-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .image-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .image-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-card {
+    padding: 0;
+    overflow: hidden;
+    min-height: 260px;
+  }
+
+  .image-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+  }
+
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+.section-heading--compact h2 {
+  font-size: clamp(1.65rem, 2.2vw, 2.4rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  max-width: 14ch;
+}
+  .download-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .download-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--case-accent, #ffffff) 35%, transparent);
+    background: color-mix(in srgb, var(--case-accent, #ffffff) 8%, rgba(255, 255, 255, 0.03));
+  }
+
+  .download-label,
+  .download-action {
+    font-size: 0.88rem;
+    opacity: 0.75;
+  }
+
+  @media (max-width: 960px) {
+    .case-grid,
+    .two-col-list,
+    .download-grid,
+    .image-grid--three,
+    .image-grid--four,
+    .image-grid--two {
+      grid-template-columns: 1fr;
+    }
+
+    .case-section {
+      padding: 3rem 0;
+    }
+  }
+</style>

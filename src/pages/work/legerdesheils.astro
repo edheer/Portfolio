@@ -1,0 +1,747 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const researchImages = [
+  {
+    src: '/images/cases/leger-des-heils/research-1.jpg',
+    alt: 'Onderzoeksopzet, theorie of methodiek',
+  },
+  {
+    src: '/images/cases/leger-des-heils/research-2.jpg',
+    alt: 'Benchmark of analyse van bestaande AI-companions',
+  },
+  {
+    src: '/images/cases/leger-des-heils/research-3.jpg',
+    alt: 'Conversation flow of scenario-uitwerking',
+  },
+];
+
+const uxImages = [
+  {
+    src: '/images/cases/leger-des-heils/ux-1.jpg',
+    alt: 'Lo-fi ontwerp of eerste schermopzet',
+  },
+  {
+    src: '/images/cases/leger-des-heils/ux-2.jpg',
+    alt: 'Hi-fi ontwerp van de applicatie',
+  },
+  {
+    src: '/images/cases/leger-des-heils/ux-3.jpg',
+    alt: 'Sportflow, multi-topic flow of andere ontwerpuitwerking',
+  },
+  {
+    src: '/images/cases/leger-des-heils/ux-4.jpg',
+    alt: 'Voice interface, design system of navigatie',
+  },
+];
+
+const handoffImages = [
+  {
+    src: '/images/cases/leger-des-heils/handoff-1.jpg',
+    alt: 'Overdrachtsdocument of projectdocumentatie',
+  },
+  {
+    src: '/images/cases/leger-des-heils/handoff-2.jpg',
+    alt: 'Structuur van de documentatie of vervolgaanpak',
+  },
+];
+
+const methods = [
+  'Double Diamond',
+  'Value-Sensitive Design',
+  'Persona’s',
+  'Empathy maps',
+  'Conversation flows',
+  'How Might We-vragen',
+  'Affinity mapping',
+  'User journeys',
+  'Scenario mapping',
+  'Lo-fi design',
+  'Hi-fi design',
+  'Prototype testing',
+];
+
+const downloads = [
+  {
+    title: 'Onderzoeksrapport gesprekstechnieken',
+    file: '/documents/onderzoek-gesprekstechnieken.pdf',
+    label: 'PDF / Onderzoek',
+  },
+  {
+    title: 'UX design verslag',
+    file: '/documents/ux-design-verslag.pdf',
+    label: 'PDF / UX ontwerp',
+  },
+  {
+    title: 'Overdrachtsdocument project',
+    file: '/documents/overdrachtsdocument-leger-des-heils.pdf',
+    label: 'PDF / Handover',
+  },
+];
+---
+
+<CaseStudyLayout
+  title="Case Study: Leger des Heils"
+  client="Leger des Heils"
+  role="UX Research / UX Design"
+  timeline="2025 — 2026"
+  accent="#dc2626"
+  accentSoft="rgba(220, 38, 38, 0.08)"
+  kicker="Confidential Case / Leger des Heils"
+  headline="Digital Social Companion"
+  intro="Onderzoek, ontwerp en overdracht voor een digitale gesprekspartner in de zorg."
+  challenge="Hoe ontwerp je een digitale gesprekspartner voor een kwetsbare doelgroep zonder de menselijke relatie te verstoren, en hoe vertaal je complexe onderzoeksinzichten naar een rustige en toegankelijke gebruikerservaring?"
+  approach="De aanpak bestond uit drie delen: onderzoek naar gesprekstechnieken, UX-ontwerp van de applicatie en documentatie voor verdere voortzetting van het project."
+  process={[
+    "Onderzoek naar gesprekstechnieken, doelgroep en conversational AI",
+    "Vertaling van onderzoeksinzichten naar UX-methodes en flows",
+    "Uitwerking van lo-fi en hi-fi ontwerpen voor de applicatie",
+    "Ontwikkeling van concepten voor tekst, voice en multi-topic interactie",
+    "Vastleggen van keuzes en overdracht voor toekomstige doorontwikkeling"
+  ]}
+  result="Het project leverde een diepgaand onderzoeksrapport, een uitgebreid UX-ontwerp voor de applicatie en een overdrachtsdocument op waarmee het project inhoudelijk en methodisch verder ontwikkeld kan worden."
+  tools={[
+    "UX Research",
+    "Conversational Design",
+    "Figma",
+    "Service Design",
+    "Accessibility",
+    "Voice UX"
+  ]}
+>
+  <section class="case-section">
+    <div class="case-grid case-grid--intro">
+      <div>
+        <p class="eyebrow">Context</p>
+        <h2>Ontwerpen voor een doelgroep die vaak als laatste wordt meegenomen</h2>
+        <p>
+          Dit project draaide om het ontwerpen van een Digital Social Companion voor het Leger des
+          Heils: een digitale gesprekspartner die cliënten kan ondersteunen in het dagelijks leven.
+          De applicatie was bedoeld voor mensen die zich vaak bevinden aan de onderkant van de
+          samenleving en te maken hebben met kwetsbaarheid, instabiliteit, lage digitale vaardigheid,
+          psychische druk of beperkte taalvaardigheid.
+        </p>
+        <p>
+          Juist voor deze doelgroep is goede digitale ondersteuning niet vanzelfsprekend. Veel apps en
+          digitale diensten worden ontworpen voor mensen die snel lezen, digitaal vaardig zijn en veel
+          keuzes tegelijk aankunnen. Binnen deze context werkt dat niet. Hier moest de interface rust
+          geven, duidelijk zijn en vertrouwen opbouwen.
+        </p>
+        <p>
+          Daardoor was dit project veel meer dan alleen een app ontwerpen. Het ging om de vraag hoe
+          technologie ondersteunend kan zijn voor mensen die in de praktijk vaak het minst worden
+          bediend door digitale producten. De uitdaging lag dus niet alleen in vormgeving, maar ook in
+          ethiek, toegankelijkheid en gedragsontwerp.
+        </p>
+      </div>
+
+      <aside class="case-meta-card">
+        <p class="eyebrow">Mijn bijdrage</p>
+        <ul>
+          <li>Onderzoek naar gesprekstechnieken voor AI in zorgcontext</li>
+          <li>Benchmarkanalyse van bestaande sociale chatbots</li>
+          <li>UX-ontwerp van de applicatie voor de doelgroep</li>
+          <li>Ontwikkeling van flows voor kennismaking, sport, multi-topic en voice</li>
+          <li>Uitwerking van een overdrachtsdocument voor voortzetting van het project</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">Project focus</p>
+      <h2>Een digitale gesprekspartner die niet harder, maar zorgvuldiger moest zijn</h2>
+    </div>
+
+    <div class="content-card">
+      <p>
+        Het doel van het project was het ontwerpen van een digitale gesprekspartner die cliënten van
+        het Leger des Heils kan ondersteunen bij alledaagse thema’s zoals kennismaking, motivatie,
+        structuur, sport en andere gespreksonderwerpen die tijdens begeleiding naar voren komen.
+      </p>
+      <p>
+        Die ondersteuning mocht nooit voelen als een koude chatbot of als een technisch systeem dat
+        simpelweg antwoorden geeft. De applicatie moest juist laagdrempelig, warm en begrijpelijk
+        zijn. Tegelijk moest duidelijk blijven dat de technologie de begeleider ondersteunt en niet
+        vervangt.
+      </p>
+      <p>
+        Dat maakte het project inhoudelijk zwaar: er moest niet alleen een bruikbare interface komen,
+        maar ook een methodisch onderbouwde manier van communiceren die aansluit op een doelgroep die
+        snel kan afhaken bij te veel tekst, te veel keuzes of een verkeerde toon.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">Part 01</p>
+      <h2>Onderzoek naar gesprekstechnieken en sociale AI</h2>
+    </div>
+
+    <div class="case-grid">
+      <div>
+        <p>
+          Voordat de applicatie ontworpen kon worden, moest eerst worden onderzocht hoe een digitale
+          gesprekspartner binnen deze context überhaupt zou moeten communiceren. Daarom begon het
+          project met een groot inhoudelijk onderzoek naar gesprekstechnieken, conversational AI en
+          bestaande sociale chatbots.
+        </p>
+        <p>
+          Daarbij stond niet de techniek centraal, maar de interactie. De kernvraag was: hoe laat je
+          een AI communiceren op een manier die empathisch, duidelijk en veilig is voor een kwetsbare
+          doelgroep?
+        </p>
+      </div>
+
+      <div class="quote-card">
+        <p>
+          De uitkomst van dit deel was dat OARS — open vragen, affirmaties, reflecties en
+          samenvattingen — de sterkste basis vormde voor warme en begrijpelijke AI-gesprekken.
+        </p>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <p class="eyebrow">Wat ik onderzocht heb</p>
+      <p>
+        Binnen dit deel heb ik literatuuronderzoek gedaan naar verschillende gesprekstechnieken en hun
+        toepasbaarheid binnen digitale interactie. Daarbij zijn onder andere Motivational
+        Interviewing, Cognitive Behavioral Therapy, Solution-Focused Brief Therapy,
+        Person-Centered Therapy en Dialectical Behavior Therapy naast elkaar gelegd.
+      </p>
+      <p>
+        Daarnaast heb ik gekeken naar bestaande AI-companions zoals Replika, Pi.ai, Wysa, Nomi.ai en
+        Kuki.ai. Niet om ze na te maken, maar om te analyseren hoe zij omgaan met empathie,
+        toegankelijkheid, warmte, structuur, veiligheid en professionele begrenzing.
+      </p>
+      <p>
+        Ook heb ik proof-of-concept gespreksflows gemaakt en geëvalueerd, zodat de vertaalslag van
+        theorie naar praktijk direct getest kon worden.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <p class="eyebrow">Onderzoeksmethodes</p>
+      <div class="two-col-list">
+        <div>
+          <h3>Literatuurstudie</h3>
+          <p>
+            Ik heb wetenschappelijke en vakinhoudelijke bronnen gebruikt om gesprekstechnieken,
+            conversational UX en zorggerichte AI-toepassingen te analyseren. Daarmee werd het
+            theoretisch fundament gelegd voor alle latere ontwerpkeuzes.
+          </p>
+        </div>
+        <div>
+          <h3>Benchmarkanalyse</h3>
+          <p>
+            Bestaande AI-companions zijn systematisch vergeleken op therapeutische basis, emotionele
+            verbinding, veiligheid, toegankelijkheid en multimodaliteit. Dat maakte duidelijk wat
+            bruikbaar was en waar juist grote risico’s ontstonden.
+          </p>
+        </div>
+        <div>
+          <h3>Proof of concept</h3>
+          <p>
+            Met scenario-gebaseerde gespreksflows heb ik onderzocht hoe technieken als reflectie,
+            bevestiging, open vragen en samenvatten concreet uitpakken in digitale interactie.
+          </p>
+        </div>
+        <div>
+          <h3>Evaluatie</h3>
+          <p>
+            De eerste uitwerkingen zijn besproken en getoetst met mensen uit zowel ICT als social
+            work. Daardoor kon ik niet alleen kijken of een flow logisch was, maar ook of hij echt
+            menselijk, rustig en bruikbaar voelde.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <p class="eyebrow">Belangrijkste conclusies uit het onderzoek</p>
+      <div class="two-col-list">
+        <div>
+          <h3>Wat goed werkte</h3>
+          <p>
+            Eenvoudige taal, korte zinnen, logische beurtwisselingen, empathische bevestiging en
+            rustige gespreksstructuren droegen sterk bij aan vertrouwen en begrijpelijkheid.
+            Vooral OARS bleek zeer geschikt om AI minder hard en direct te maken.
+          </p>
+        </div>
+        <div>
+          <h3>Wat risicovol bleef</h3>
+          <p>
+            Veel bestaande AI-systemen zijn sterk in warmte of gebruiksgemak, maar missen goede
+            professionele begrenzing. Juist binnen het Leger des Heils moest daarom duidelijk blijven
+            dat de technologie ondersteunend is aan begeleiding, en nooit de plaats van een mens
+            inneemt.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-grid image-grid--three">
+      {researchImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">Part 02</p>
+      <h2>UX-ontwerp van de applicatie</h2>
+    </div>
+
+    <div class="case-grid">
+      <div>
+        <p>
+          Op basis van het onderzoek heb ik de applicatie ontworpen voor de doelgroep van het Leger
+          des Heils. Daarbij lag de focus op een interface die niet overweldigt, maar begeleidt. De
+          app moest begrijpelijk zijn voor mensen die moeite kunnen hebben met lezen, concentreren of
+          het verwerken van veel informatie tegelijk.
+        </p>
+        <p>
+          Het ging dus niet alleen om mooie schermen maken, maar om het ontwerpen van een rustige en
+          betrouwbare digitale omgeving waarin de gebruiker zich veilig voelt.
+        </p>
+      </div>
+
+      <div class="content-card compact">
+        <p class="eyebrow">Onderwerpen binnen het ontwerp</p>
+        <ul class="clean-list">
+          <li>Kennismaking en eerste vertrouwen</li>
+          <li>Sport en motivatie</li>
+          <li>Schakelen tussen meerdere gespreksonderwerpen</li>
+          <li>Voice interface en multimodale interactie</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <p class="eyebrow">Ontwerpmethodiek</p>
+      <p>
+        Het UX-traject is opgebouwd volgens de Double Diamond-methode. Dat betekende eerst breed
+        verkennen wat de doelgroep nodig heeft, waar spanningen en drempels zitten, en pas daarna
+        keuzes terugbrengen naar concrete ontwerprichtingen.
+      </p>
+      <p>
+        Daarnaast is gewerkt vanuit Value-Sensitive Design. Niet snelheid of technische slimheid
+        stonden centraal, maar waarden als veiligheid, nabijheid, rust, autonomie en begrijpelijkheid.
+        Die waarden zijn steeds gebruikt als toetssteen voor het ontwerp.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <p class="eyebrow">Gebruikte UX-methodes</p>
+      <div class="method-grid">
+        {methods.map((method) => (
+          <span class="method-pill">{method}</span>
+        ))}
+      </div>
+    </div>
+
+    <div class="content-card">
+      <p class="eyebrow">Hoe ik die UX-methodes heb toegepast</p>
+      <div class="two-col-list">
+        <div>
+          <h3>Persona’s en empathy maps</h3>
+          <p>
+            Deze heb ik gebruikt om de doelgroep concreet te maken: wat voelen gebruikers, waar lopen
+            ze op vast, wat hebben ze nodig om een gesprek of scherm veilig te ervaren? Hierdoor werd
+            duidelijk dat de interface rustiger, simpeler en minder talig moest zijn dan standaard
+            apps.
+          </p>
+        </div>
+        <div>
+          <h3>Conversation flows</h3>
+          <p>
+            Omdat het project draaide om een digitale gesprekspartner, waren conversation flows een
+            kernmethode. Daarmee heb ik de logica van gesprekken uitgewerkt: hoe begint een gesprek,
+            hoe reageert Luca, hoe bouw je vertrouwen op en hoe voorkom je verwarring?
+          </p>
+        </div>
+        <div>
+          <h3>How Might We en affinity mapping</h3>
+          <p>
+            Deze methodes hielpen om grote hoeveelheden informatie uit onderzoek terug te brengen naar
+            concrete ontwerpvragen. Daardoor ontstond focus op de echte ontwerpuitdagingen, zoals:
+            hoe houd je de interactie veilig, hoe beperk je cognitieve belasting en hoe behoud je
+            autonomie voor de gebruiker?
+          </p>
+        </div>
+        <div>
+          <h3>User journeys en scenario mapping</h3>
+          <p>
+            Hiermee heb ik zichtbaar gemaakt hoe cliënten de app zouden gebruiken en waar emotionele of
+            praktische knelpunten zitten. Dat was vooral belangrijk bij wisselende onderwerpen,
+            sportmotivatie en gesprekken die spanning oproepen.
+          </p>
+        </div>
+        <div>
+          <h3>Lo-fi en hi-fi design</h3>
+          <p>
+            Eerst zijn ideeën snel en schetsmatig getest in lo-fi, zodat structuur en logica konden
+            worden aangescherpt. Daarna zijn hi-fi ontwerpen gemaakt waarin uitstraling,
+            toegankelijkheid, componenten, typografie en visuele rust verder zijn uitgewerkt.
+          </p>
+        </div>
+        <div>
+          <h3>Prototype en validatie</h3>
+          <p>
+            Door prototypes te maken en de eerste keuzes te bespreken, kon ik toetsen of de
+            applicatie niet alleen logisch was, maar ook echt passend voelde voor deze doelgroep en
+            context.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-card">
+      <p class="eyebrow">Belangrijke ontwerpkeuzes</p>
+      <div class="two-col-list">
+        <div>
+          <h3>Rust boven complexiteit</h3>
+          <p>
+            De interface is bewust teruggebracht tot duidelijke schermen, korte teksten, ruime
+            componenten en zo min mogelijk afleiding. Dat verlaagt cognitieve belasting en helpt de
+            gebruiker om stap voor stap door de interactie te gaan.
+          </p>
+        </div>
+        <div>
+          <h3>Eenvoudige taal</h3>
+          <p>
+            Omdat de doelgroep uiteenlopende taal- en leesvaardigheid heeft, is gekozen voor korte
+            zinnen, heldere bewoordingen en voorspelbare formuleringen.
+          </p>
+        </div>
+        <div>
+          <h3>Visuele ondersteuning</h3>
+          <p>
+            Bij onderdelen zoals sport en oriëntatie heb ik gewerkt met foto’s, kaarten en andere
+            visuele cues. Niet als versiering, maar om abstracte informatie concreter en beter
+            begrijpelijk te maken.
+          </p>
+        </div>
+        <div>
+          <h3>Multimodaliteit</h3>
+          <p>
+            Omdat typen niet voor iedereen vanzelfsprekend is, is ook gekeken naar voice en
+            multimodale interactie. Daarbij bleef overzicht leidend: spraak moest altijd ondersteund
+            worden door transcriptie, feedback en duidelijke statusmomenten.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="image-grid image-grid--four">
+      {uxImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">Part 03</p>
+      <h2>Overdracht en voortzetting van het project</h2>
+    </div>
+
+    <div class="content-card">
+      <p>
+        Een belangrijk onderdeel van mijn werk was niet alleen het onderzoeken en ontwerpen, maar ook
+        het overdraagbaar maken van het project. Omdat dit geen los schoolproduct was maar een project
+        met potentie voor verdere ontwikkeling, heb ik ook een overdrachtsdocument gemaakt voor de
+        voortzetting.
+      </p>
+      <p>
+        In dat document zijn de belangrijkste inhoudelijke inzichten, ontwerpkeuzes, methodieken,
+        uitgangspunten en vervolgrichtingen vastgelegd. Daarmee konden anderen niet alleen zien wat er
+        gemaakt was, maar ook waarom bepaalde keuzes zijn gemaakt en hoe daarop voortgebouwd kan
+        worden.
+      </p>
+      <p>
+        Dat was belangrijk, omdat juist bij een project als dit contextverlies snel gevaarlijk wordt.
+        Zonder goede overdracht blijft alleen een interface over. Met goede documentatie blijft ook de
+        onderliggende gedachte, zorgvuldigheid en methodische basis behouden.
+      </p>
+    </div>
+
+    <div class="two-col-list">
+      <div class="content-card">
+        <h3>Wat er is vastgelegd</h3>
+        <p>
+          In de overdracht zijn de onderzoekslijnen, UX-methodes, gespreksstructuren, ontwerpprincipes
+          en aanbevelingen voor doorontwikkeling opgenomen. Daarmee werd het project niet alleen
+          opgeleverd, maar ook voorbereid op vervolg.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h3>Waarom dit belangrijk was</h3>
+        <p>
+          Voor een project in een zorgcontext is een goed overdrachtsdocument essentieel. Het zorgt
+          ervoor dat vervolgontwikkelaars of betrokkenen begrijpen welke waarden centraal stonden en
+          welke keuzes bewust zijn gemaakt voor deze doelgroep.
+        </p>
+      </div>
+    </div>
+
+    <div class="image-grid image-grid--two">
+      {handoffImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">Outcome</p>
+      <h2>Wat dit project heeft opgeleverd</h2>
+    </div>
+
+    <div class="two-col-list">
+      <div class="content-card">
+        <h3>Onderzoek</h3>
+        <p>
+          Een inhoudelijk sterk onderzoeksrapport over gesprekstechnieken, empathische AI en
+          conversational design binnen een zorgcontext.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h3>UX-ontwerp</h3>
+        <p>
+          Een uitgebreid ontwerptraject voor de applicatie, met flows, lo-fi en hi-fi uitwerkingen,
+          multimodale concepten en duidelijke ontwerpprincipes voor de doelgroep.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h3>Toepasbare documentatie</h3>
+        <p>
+          Een overdrachtsdocument waarmee het project inhoudelijk en methodisch verder ontwikkeld kan
+          worden.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h3>Belangrijkste waarde</h3>
+        <p>
+          De kracht van dit project zat in het zorgvuldig ontwerpen voor mensen die juist niet
+          vanzelfsprekend worden meegenomen in digitale producten.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">Downloads</p>
+      <h2>Supporting documents</h2>
+    </div>
+
+    <div class="download-grid">
+      {downloads.map((download) => (
+        <a class="download-card" href={download.file} target="_blank" rel="noreferrer">
+          <span class="download-label">{download.label}</span>
+          <strong>{download.title}</strong>
+          <span class="download-action">Open document</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</CaseStudyLayout>
+
+<style>
+  .case-section {
+    padding: 4rem 0;
+  }
+
+  .case-section p {
+    color: rgba(255, 255, 255, 0.74);
+    line-height: 1.85;
+  }
+
+  .section-heading {
+    margin-bottom: 2rem;
+  }
+
+  .section-heading h2 {
+    margin: 0.35rem 0 0;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .case-section h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.08rem;
+    line-height: 1.2;
+  }
+
+  .content-card p + p {
+    margin-top: 1rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.25rem;
+    color: var(--accent, #dc2626);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .case-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.95fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .case-grid--intro {
+    align-items: stretch;
+  }
+
+  .two-col-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .content-card,
+  .quote-card,
+  .case-meta-card,
+  .download-card,
+  .image-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1.75rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .content-card.compact {
+    height: 100%;
+  }
+
+  .quote-card p {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .case-meta-card ul,
+  .clean-list {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .case-meta-card li,
+  .clean-list li {
+    margin: 0.55rem 0;
+    color: rgba(255, 255, 255, 0.76);
+  }
+
+  .method-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .method-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .image-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .image-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .image-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-card {
+    padding: 0;
+    overflow: hidden;
+    min-height: 260px;
+  }
+
+  .image-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+  }
+
+  .download-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .download-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+  }
+
+  .download-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(220, 38, 38, 0.35);
+    background: rgba(220, 38, 38, 0.06);
+  }
+
+  .download-label,
+  .download-action {
+    font-size: 0.88rem;
+    opacity: 0.75;
+  }
+
+  @media (max-width: 960px) {
+    .case-grid,
+    .two-col-list,
+    .download-grid,
+    .image-grid--three,
+    .image-grid--four,
+    .image-grid--two {
+      grid-template-columns: 1fr;
+    }
+
+    .case-section {
+      padding: 3rem 0;
+    }
+  }
+</style>

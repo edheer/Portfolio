@@ -1,0 +1,29 @@
+---
+const jobs = [
+  { year: '2025-HEDEN', company: 'TWINPIXEL', role: 'CO-FOUNDER & UX/UI', desc: 'Ondernemerschap & high-end webdesign.' },
+  { year: '2024-2026', company: 'WAGENINGEN UNIVERSITY & RESEARCH', role: 'UX DESIGNER', desc: 'Oplossingsgericht design in de academische sector.' },
+  { year: '2023-2026', company: 'Medezeggenschapraad CHE', role: 'Raadslid', desc: 'Beleidsmatig denken en studentenbelangen.' },
+  { year: '2022-2024', company: 'S.V.NULL', role: 'CO-FOUNDER & PR', desc: 'Bouwen aan de community voor HBO-ICT.' },
+];
+---
+
+<div class="space-y-12">
+  {jobs.map((job) => (
+    <div class="group relative border-l-2 border-white/5 pl-8 py-4 hover:border-[#befc28] transition-all duration-500">
+      <div class="absolute -left-[9px] top-6 w-4 h-4 rounded-full bg-white/10 group-hover:bg-[#befc28] group-hover:shadow-[0_0_20px_#befc28] transition-all"></div>
+      
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div>
+          <span class="text-[#befc28] font-mono text-sm tracking-tighter">{job.year}</span>
+          <h3 class="text-4xl md:text-5xl font-black italic tracking-tighter group-hover:translate-x-2 transition-transform uppercase">
+            {job.company}
+          </h3>
+        </div>
+        <div class="text-left md:text-right">
+          <p class="text-xl font-bold uppercase">{job.role}</p>
+          <p class="text-white/40 text-sm max-w-xs md:ml-auto">{job.desc}</p>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>

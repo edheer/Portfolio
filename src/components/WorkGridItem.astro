@@ -1,0 +1,46 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  description: string;
+  image: string;
+  link?: string;
+  span?: string; // Om de breedte in het grid te bepalen
+  year: string;
+}
+
+const { title, category, description, image, link, span = "md:col-span-6", year } = Astro.props;
+---
+
+<a href={link || "#"} class={`group relative overflow-hidden rounded-[2rem] border border-white/5 bg-neutral-900 ${span} aspect-square md:aspect-auto md:h-[500px] transition-all duration-500 hover:border-[#befc28]/30`}>
+  <!-- Background Image -->
+  <img 
+    src={image} 
+    alt={title} 
+    class="absolute inset-0 w-full h-full object-cover grayscale opacity-30 group-hover:scale-105 group-hover:opacity-60 group-hover:grayscale-0 transition-all duration-1000"
+  />
+  
+  <!-- Overlay Gradient -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80"></div>
+
+  <!-- Content -->
+  <div class="absolute inset-0 p-8 md:p-12 flex flex-col justify-end">
+    <div class="translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-[#befc28] font-mono text-[10px] tracking-[0.3em] font-bold">{year}</span>
+        <span class="text-white/30 font-mono text-[10px] uppercase tracking-[0.3em]">{category}</span>
+      </div>
+      
+      <h3 class="text-3xl md:text-5xl font-black italic uppercase tracking-tighter mb-4">{title}</h3>
+      
+      <p class="text-white/0 group-hover:text-white/60 transition-colors duration-500 leading-relaxed font-light text-sm max-w-md line-clamp-3">
+        {description}
+      </p>
+    </div>
+  </div>
+
+  <!-- Visit Icon -->
+  <div class="absolute top-8 right-8 w-12 h-12 rounded-full border border-white/10 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-white/5 backdrop-blur-md">
+    <span class="text-[#befc28] text-xl">↗</span>
+  </div>
+</a>

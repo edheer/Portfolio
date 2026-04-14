@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+  category: string;
+  description: string;
+  year: string;
+  image: string;
+  link?: string;
+  tags: string[];
+}
+
+const { title, category, description, year, image, link, tags } = Astro.props;
+---
+
+<div class="group grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-32 last:mb-0">
+  <!-- Afbeelding: Nu compacter en stijlvol -->
+  <div class="relative aspect-video overflow-hidden rounded-2xl border border-white/5 bg-neutral-900">
+    <img 
+      src={image} 
+      alt={title} 
+      class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 opacity-50 group-hover:opacity-100"
+    />
+    {link && (
+      <a href={link} target="_blank" class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40 backdrop-blur-sm">
+        <span class="bg-[#befc28] text-black px-6 py-2 rounded-full font-black text-[10px] uppercase tracking-widest">Visit Site ↗</span>
+      </a>
+    )}
+  </div>
+
+  <!-- Tekst: De uitleg -->
+  <div class="space-y-6">
+    <div class="flex items-center gap-3">
+        <span class="text-[#befc28] font-mono text-[10px] tracking-[0.3em] font-bold">{year}</span>
+        <span class="text-white/20 font-mono text-[10px] uppercase tracking-[0.3em]">{category}</span>
+    </div>
+    
+    <h3 class="text-4xl font-black italic uppercase tracking-tighter">{title}</h3>
+    
+    <p class="text-white/50 leading-relaxed font-light text-lg">
+      {description}
+    </p>
+
+    <div class="flex flex-wrap gap-2">
+      {tags.map(tag => (
+        <span class="px-3 py-1 border border-white/10 rounded-full text-[9px] uppercase tracking-widest text-white/40 group-hover:border-[#befc28]/40 group-hover:text-[#befc28] transition-colors">
+          {tag}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>

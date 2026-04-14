@@ -1,0 +1,227 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Timeline from '../components/Timeline.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+// Let op: Meestal staat Footer in je MainLayout, 
+// maar als je hem handmatig hier wilt:
+import Footer from '../components/Footer.astro';
+
+const row1 = ["TWINPIXEL", "UX DESIGNER", "WOUDENBERG", "OPRICHTER", "IT-CONSULTANCY"];
+const row2 = ["UI DESIGNER", "HBO-ICT", "BRANDING", "DEVELOPMENT", "STRATEGY"];
+const row3 = ["WAGENINGEN UNIVERSITY", "Intuitief", "UX RESEARCH", "CHE", "SCROLL"];
+const row4 = ["SCRUM", "HTML & CSS", "FOUNDER", "DIGITAL", "ASTRO"];
+---
+
+<MainLayout title="Home">
+  <!-- Hero Section -->
+  <section id="hero" class="min-h-screen w-full relative overflow-hidden flex flex-col justify-center">
+    
+    <!-- 1. DE INTERACTIEVE MOUSE GLOW -->
+    <div 
+      id="mouse-glow" 
+      class="fixed w-[600px] h-[600px] bg-[#befc28]/15 rounded-full blur-[120px] pointer-events-none -translate-x-1/2 -translate-y-1/2 z-[-15] opacity-0 transition-opacity duration-500"
+    ></div>
+
+    <!-- 2. DE 100% BREEDTE KINETIC ACHTERGROND -->
+    <div class="absolute inset-0 -z-20 flex flex-col justify-around py-8 pointer-events-none select-none opacity-[0.03] italic font-black uppercase">
+      <div class="w-screen overflow-hidden flex border-y border-white/[0.03]">
+        <div class="marquee-content anim-scroll-left">
+          {row1.map(word => <span class="mx-10 text-[12vh]">{word}</span>)}
+          {row1.map(word => <span class="mx-10 text-[12vh]">{word}</span>)}
+        </div>
+      </div>
+
+      <div class="w-screen overflow-hidden flex border-b border-white/[0.03]">
+        <div class="marquee-content anim-scroll-right text-[#befc28]">
+          {row2.map(word => <span class="mx-10 text-[15vh]">{word}</span>)}
+          {row2.map(word => <span class="mx-10 text-[15vh]">{word}</span>)}
+        </div>
+      </div>
+
+      <div class="w-screen overflow-hidden flex border-b border-white/[0.03]">
+        <div class="marquee-content anim-scroll-left-slow">
+          {row3.map(word => <span class="mx-10 text-[10vh]">{word}</span>)}
+          {row3.map(word => <span class="mx-10 text-[10vh]">{word}</span>)}
+        </div>
+      </div>
+
+      <div class="w-screen overflow-hidden flex border-b border-white/[0.03]">
+        <div class="marquee-content anim-scroll-right-fast">
+          {row4.map(word => <span class="mx-10 text-[13vh]">{word}</span>)}
+          {row4.map(word => <span class="mx-10 text-[13vh]">{word}</span>)}
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. CONTENT CONTAINER -->
+    <div class="max-w-7xl mx-auto w-full px-6 relative z-10">
+      <div class="flex items-center gap-4 mb-10 slide-up-fade">
+          <div class="px-4 py-1.5 bg-[#befc28] text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-sm skew-x-[-12deg]">
+              Now Available
+          </div>
+          <div class="text-white/30 text-[10px] font-mono tracking-widest uppercase italic">
+              // Woudenberg, NL — 52.08° N, 5.41° E
+          </div>
+      </div>
+
+      <h1 class="text-[clamp(4.5rem,18vw,13rem)] font-black leading-[0.8] tracking-tighter italic uppercase pointer-events-none">
+        EMMA <br /> 
+        <span class="text-transparent" style="-webkit-text-stroke: 1.5px #befc28;">DE HEER</span>
+      </h1>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mt-20 border-t border-white/10 pt-12 items-end">
+          <div class="md:col-span-6">
+              <p class="text-2xl md:text-3xl font-light leading-tight text-white/70">
+                  Co-founder van <span class="text-white font-bold italic underline decoration-[#befc28] underline-offset-8">Twinpixel</span> en gespecialiseerd in UX/UI design en IT-consultancy.
+              </p>
+          </div>
+
+          <div class="md:col-span-6 flex flex-wrap gap-2 justify-end">
+              {['UX Design', 'IT-Consultancy', 'HTML/CSS', 'Branding'].map(skill => (
+                  <span class="px-4 py-2 bg-neutral-900 border border-white/10 text-[10px] uppercase tracking-widest rounded-full hover:border-[#befc28] transition-colors cursor-crosshair">
+                      {skill}
+                  </span>
+              ))}
+          </div>
+      </div>
+    </div>
+  </section>
+
+<!-- FEATURED WORK SECTION -->
+<section class="max-w-7xl mx-auto px-6 py-40 border-t border-white/5">
+  <div class="flex justify-between items-end mb-16">
+      <div>
+          <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
+              FEATURED <span class="text-transparent" style="-webkit-text-stroke: 1px #befc28;">CASES</span>
+          </h2>
+      </div>
+      <a href="/work" class="text-[#befc28] text-[10px] font-black uppercase tracking-widest border-b border-[#befc28]/20 pb-1 hover:border-[#befc28] transition-all">
+          Browse all →
+      </a>
+  </div>
+  
+  <!-- Strak Bento Grid: Alle kaarten hebben een vaste hoogte of aspect ratio -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+      
+      <!-- Hoofdproject (Groot) -->
+      <div class="md:col-span-8 md:h-[500px]">
+          <ProjectCard 
+              title="Twinpixel Studio" 
+              category="Agency Website" 
+              year="2025" 
+              image="/twinpixel.png" 
+              link="/work/twinpixel"
+          />
+      </div>
+
+      <!-- Project 2 (Kleiner) -->
+      <div class="md:col-span-4 md:h-[500px]">
+          <ProjectCard 
+              title="WUR Research" 
+              category="Data UI" 
+              year="2024" 
+              image="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000" 
+              link="/work/wur-rekentool" 
+          />
+      </div>
+
+      <!-- Project 3 -->
+      <div class="md:col-span-4 md:h-[400px]">
+          <ProjectCard 
+              title="Bybrittnails" 
+              category="Branding" 
+              year="2023" 
+              image="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200" 
+              link="/work/bybrittnails" 
+          />
+      </div>
+
+      <!-- Project 4 -->
+      <div class="md:col-span-4 md:h-[400px]">
+          <ProjectCard 
+              title="Travel App" 
+              category="Mobile UX" 
+              year="2023" 
+              image="https://images.unsplash.com/photo-1512428559083-a401a3019550?q=80&w=1200" 
+              link="/work" 
+          />
+      </div>
+
+      <!-- Project 5 -->
+      <div class="md:col-span-4 md:h-[400px]">
+          <ProjectCard 
+              title="Sonic Audio" 
+              category="Web Design" 
+              year="2024" 
+              image="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000" 
+              link="/work" 
+          />
+      </div>
+
+  </div>
+</section>
+
+  <!-- TIMELINE SECTIE -->
+  <section class="max-w-7xl mx-auto px-6 py-40">
+      <div class="flex items-center gap-10 mb-20 opacity-20">
+          <h2 class="text-8xl md:text-9xl font-black italic tracking-tighter uppercase leading-none">CURRICULUM</h2>
+          <div class="flex-grow h-[1px] bg-white"></div>
+      </div>
+      <Timeline />
+  </section>
+
+  <!-- FOOTER -->
+  <Footer />
+
+  <!-- SCRIPTS -->
+  <script>
+    const glow = document.getElementById('mouse-glow');
+    const hero = document.getElementById('hero');
+
+    if (glow && hero) {
+      window.addEventListener('mousemove', (e) => {
+        glow.style.left = `${e.clientX}px`;
+        glow.style.top = `${e.clientY}px`;
+        
+        const rect = hero.getBoundingClientRect();
+        // Glow alleen aan in de hero
+        if (e.clientY <= rect.bottom + 100) {
+          glow.style.opacity = "1";
+        } else {
+          glow.style.opacity = "0";
+        }
+      });
+    }
+  </script>
+</MainLayout>
+
+<style is:global>
+  .marquee-content {
+    display: flex;
+    white-space: nowrap;
+    width: fit-content;
+  }
+
+  @keyframes scroll-left {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  .anim-scroll-left { animation: scroll-left 50s linear infinite; }
+  .anim-scroll-left-slow { animation: scroll-left 90s linear infinite; }
+  .anim-scroll-right { animation: scroll-right 60s linear infinite; }
+  .anim-scroll-right-fast { animation: scroll-right 40s linear infinite; }
+
+  .slide-up-fade {
+    animation: slideUp 1s ease-out forwards;
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>

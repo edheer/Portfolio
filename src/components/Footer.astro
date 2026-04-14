@@ -1,0 +1,85 @@
+<footer class="relative w-full border-t border-white/5 pt-40 pb-10 overflow-hidden bg-[#050505]">
+  
+  <!-- 1. DE AURA GLOW (Subtiel groen in de hoek) -->
+  <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#befc28]/5 blur-[120px] rounded-full pointer-events-none -z-10"></div>
+
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- 2. DE GROTE CTA -->
+    <div class="mb-32 group cursor-none">
+        <a href="mailto:Emdeheer@gmail.com" class="block">
+            <span class="text-[10px] font-black uppercase tracking-[0.5em] text-[#befc28] mb-4 block">Ready to start?</span>
+            <h2 class="text-[clamp(3rem,10vw,8rem)] font-black italic leading-[0.8] tracking-tighter uppercase transition-all duration-700 group-hover:tracking-normal">
+                Let's build <br /> 
+                <span class="text-transparent" style="-webkit-text-stroke: 1.5px white;">something</span> <br /> 
+                unique<span class="text-[#befc28]">.</span>
+            </h2>
+        </a>
+    </div>
+
+    <!-- 3. DE TECHNICAL GRID (Links & Info) -->
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 border-t border-white/10 pt-12">
+        
+        <!-- Socials -->
+        <div class="md:col-span-4 space-y-6">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-white/30 italic">// Socials</p>
+            <div class="flex flex-col gap-2">
+                <a href="https://www.linkedin.com/in/emma-de-heer-56826824b/" class="text-xl font-bold hover:text-[#befc28] transition-colors w-fit">LinkedIn</a>
+                <a href="https://www.instagram.com/3mma_dh/" class="text-xl font-bold hover:text-[#befc28] transition-colors w-fit">Instagram</a>
+                <a href="https://github.com/edheer" class="text-xl font-bold hover:text-[#befc28] transition-colors w-fit">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Contact & Location -->
+        <div class="md:col-span-4 space-y-6">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-white/30 italic">// Contact</p>
+            <div class="flex flex-col gap-2">
+                <a href="mailto:Emdeheer@gmail.com" class="text-xl font-bold hover:text-[#befc28] transition-colors w-fit">Emdeheer@gmail.com</a>
+                <p class="text-xl font-bold text-white/60">06 83 84 28 60</p>
+            </div>
+        </div>
+
+        <!-- Technical Data (The Agency Touch) -->
+        <div class="md:col-span-4 space-y-6 md:text-right flex flex-col md:items-end">
+            <p class="text-[10px] font-bold uppercase tracking-widest text-white/30 italic">// Local Time</p>
+            <div class="flex flex-col md:items-end gap-2">
+                <!-- Live Clock Script onderaan -->
+                <p id="local-clock" class="text-4xl font-black italic text-[#befc28] leading-none tracking-tighter">00:00:00</p>
+                <p class="text-[10px] font-mono text-white/40 uppercase tracking-widest">Woudenberg, Netherlands — GMT+1</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. KINETIC FOOTER FINISH (Hele rustige marquee) -->
+    <div class="mt-40 border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-6 opacity-30">
+        <div class="flex gap-4 items-center">
+            <div class="w-2 h-2 bg-[#befc28] rounded-full animate-pulse"></div>
+            <span class="text-[10px] font-black uppercase tracking-[0.4em]">Emma de Heer © 2025</span>
+        </div>
+        
+        <div class="hidden md:flex gap-20 overflow-hidden text-[10px] font-black uppercase tracking-[0.5em] whitespace-nowrap italic">
+            <span>Twinpixel Digital</span>
+            <span>UX/UI Architect</span>
+            <span>Based in Woudenberg</span>
+            <span>Astro Framework</span>
+        </div>
+
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="text-[10px] font-black uppercase tracking-[0.4em] hover:text-[#befc28] transition-colors">
+            Back to top ↑
+        </button>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Script voor de live klok (Agency vibe)
+  function updateClock() {
+    const clockElement = document.getElementById('local-clock');
+    if (clockElement) {
+      const now = new Date();
+      const options = { timeZone: 'Europe/Amsterdam', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };
+      clockElement.innerText = now.toLocaleTimeString('nl-NL', options);
+    }
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>

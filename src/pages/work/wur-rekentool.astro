@@ -1,0 +1,285 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const heroImages = [
+  {
+    src: '/images/cases/wur-rekentool/tool-1.jpg',
+    alt: 'Overzicht van de WUR rekentool met meerdere berekeningen',
+  },
+  {
+    src: '/images/cases/wur-rekentool/tool-2.jpg',
+    alt: 'Scherm met budget, netto voordeel en detailberekening',
+  },
+  {
+    src: '/images/cases/wur-rekentool/tool-3.jpg',
+    alt: 'Extra voorbeeldscherm van een berekening binnen de tool',
+  },
+  {
+    src: '/images/cases/wur-rekentool/tool-4.jpg',
+    alt: 'Mobiele of alternatieve weergave van de WUR rekentool',
+  },
+];
+
+const processImages = [
+  {
+    src: '/images/cases/wur-rekentool/process-1.jpg',
+    alt: 'Wireframes of informatiearchitectuur van de rekentool',
+  },
+  {
+    src: '/images/cases/wur-rekentool/process-2.jpg',
+    alt: 'Ontwerpkeuzes en structuur van de verschillende rekentools',
+  },
+  {
+    src: '/images/cases/wur-rekentool/process-3.jpg',
+    alt: 'UI-uitwerking of componentstructuur',
+  },
+];
+
+const detailImages = [
+  {
+    src: '/images/cases/wur-rekentool/detail-1.jpg',
+    alt: 'Berekeningsdetail of resultatenblok',
+  },
+  {
+    src: '/images/cases/wur-rekentool/detail-2.jpg',
+    alt: 'Uitlegblok of gebruikersflow richting Optare',
+  },
+];
+
+const methods = [
+  'UX Design',
+  'Information Architecture',
+  'UI Design',
+  'Interaction Design',
+  'Frontend Development',
+  'Form Design',
+  'Responsive Design',
+  'Content Structuring',
+];
+
+const downloads = [
+  {
+    title: 'UX-uitwerking WUR rekentool',
+    file: '/documents/wur-rekentool-ux.pdf',
+    label: 'PDF / Ontwerp en onderbouwing',
+  },
+  {
+    title: 'Functionele uitwerking en berekeningen',
+    file: '/documents/wur-rekentool-functioneel.pdf',
+    label: 'PDF / Functioneel document',
+  },
+];
+---
+
+<CaseStudyLayout
+  title="Case Study: WUR Rekentool"
+  client="Wageningen University & Research"
+  role="UX / UI / Frontend"
+  timeline="2025"
+  accent="#befc28"
+  accentSoft="rgba(190, 252, 40, 0.08)"
+  kicker="Portfolio Case / WUR"
+  headline="Optare Rekentool"
+  intro="Een digitale rekentool waarmee WUR-medewerkers snel en duidelijk hun uitruilvoordeel kunnen berekenen."
+  challenge="Hoe maak je complexe arbeidsvoorwaardelijke berekeningen begrijpelijk en bruikbaar voor medewerkers, zonder dat de tool technisch of verwarrend aanvoelt?"
+  approach="Mijn aanpak lag in het terugbrengen van complexiteit. Ik heb de tool ontworpen als een heldere, modulaire interface waarin verschillende berekeningen dezelfde logica volgen: invoer, uitleg, netto voordeel en detailvergelijking."
+  process={[
+    "Inventariseren welke berekeningen in de tool terug moeten komen en welke informatie per variant essentieel is.",
+    "Structureren van de interface in herkenbare blokken, zodat gebruikers niet telkens opnieuw hoeven te leren hoe de tool werkt.",
+    "Uitwerken van invoervelden, resultatenblokken en detailweergaven met focus op duidelijkheid en rust.",
+    "Ontwerpen van een consistente flow van indicatieve berekening naar concrete vervolgstap in Optare.",
+    "Vertalen van de UX-uitwerking naar een front-end die overzichtelijk, responsief en praktisch inzetbaar is."
+  ]}
+  result="Het resultaat is een heldere digitale rekentool waarin meerdere uitruilberekeningen op een consistente manier samenkomen. De tool helpt medewerkers sneller inzicht te krijgen in hun voordeel en verlaagt de drempel om de regeling daadwerkelijk te gebruiken."
+  tools={[
+    "HTML/CSS",
+    "JavaScript",
+    "UX Design",
+    "UI Design",
+    "Information Architecture",
+    "Responsive Design"
+  ]}
+>
+  <section class="case-section">
+    <div class="case-grid case-grid--intro">
+      <div>
+        <p class="eyebrow">Context</p>
+        <h2 class="case-title">Een praktische tool voor complexe regelingen</h2>
+
+        <p>
+          Voor WUR werkte ik aan een rekentool rondom uitruil van arbeidsvoorwaarden.
+          Het doel was om medewerkers op een laagdrempelige manier inzicht te geven in
+          wat bepaalde keuzes financieel betekenen.
+        </p>
+
+        <p>
+          De uitdaging zat vooral in de inhoud. Dit soort regelingen zijn voor veel mensen
+          niet direct duidelijk, terwijl ze wel concrete financiële gevolgen hebben.
+          De tool moest daarom niet alleen correct rekenen, maar vooral ook begrijpelijk
+          aanvoelen.
+        </p>
+
+        <p>
+          In de uiteindelijke opzet komen meerdere berekeningen samen in één omgeving,
+          waaronder reiskosten, fiets, extra verlof en vakbondscontributie. Per variant
+          is dezelfde kernstructuur aangehouden: invoer, uitleg, netto voordeel en
+          detailvergelijking.
+        </p>
+      </div>
+
+      <aside class="case-meta-card">
+        <p class="eyebrow">Mijn bijdrage</p>
+        <ul>
+          <li>UX-structuur van de tool</li>
+          <li>UI-ontwerp van invoer en resultaten</li>
+          <li>Opzet van consistente berekeningsflows</li>
+          <li>Front-end uitwerking</li>
+          <li>Vertaling van complexe inhoud naar begrijpelijke interactie</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <p class="eyebrow">Product Design</p>
+    <h2 class="case-title">Van losse regelingen naar één logisch systeem</h2>
+
+    <div class="content-card">
+      <p>
+        Een van de belangrijkste ontwerpkeuzes was om niet per berekening opnieuw een
+        andere ervaring te bouwen. In plaats daarvan is de tool opgezet als één consistent
+        systeem waarin meerdere scenario’s dezelfde basislogica volgen.
+      </p>
+
+      <p>
+        Daardoor hoeven gebruikers maar één keer te begrijpen hoe de tool werkt. Of iemand
+        nu kijkt naar reiskosten, een fietsregeling, bovenwettelijk verlof of
+        vakbondscontributie: de interactie voelt hetzelfde aan. Op de live tool zie je dat
+        terug in de manier waarop de verschillende berekeningen naast elkaar bestaan, met
+        telkens dezelfde opbouw van budget, voordeel en details.
+      </p>
+    </div>
+
+    <div class="image-grid image-grid--four">
+      {heroImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="case-section">
+    <p class="eyebrow">UX Method</p>
+    <h2 class="case-title">Complexiteit terugbrengen tot duidelijke stappen</h2>
+
+    <div class="content-card">
+      <div class="method-grid">
+        {methods.map((method) => (
+          <span class="method-pill">{method}</span>
+        ))}
+      </div>
+    </div>
+
+    <div class="content-card">
+      <p>
+        De UX-focus lag op rust, herkenning en vertrouwen. Gebruikers moeten durven vertrouwen
+        op de uitkomst van een berekening, dus de interface moest helder en controleerbaar zijn.
+        Daarom is per tool steeds gewerkt met een duidelijke scheiding tussen invoer, context,
+        netto resultaat en detailvergelijking.
+      </p>
+
+      <p>
+        Ook de inhoudelijke uitleg speelt hierin een rol. Op de site is zichtbaar dat de tool
+        expliciet aangeeft dat het om een indicatieve berekening gaat, en dat de gebruiker daarna
+        direct kan doorstromen naar Optare. Dat soort signalen zijn belangrijk, omdat ze de tool
+        eerlijk en bruikbaar maken tegelijk.
+      </p>
+    </div>
+
+    <div class="image-grid image-grid--three">
+      {processImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="case-section">
+    <p class="eyebrow">Interface</p>
+    <h2 class="case-title">Helder resultaat, zonder spreadsheet-gevoel</h2>
+
+    <div class="content-card">
+      <p>
+        Bij tools als deze is het risico groot dat de gebruiker het gevoel krijgt in een
+        ondoorgrondelijke financiële module terecht te komen. Daarom is de interface bewust
+        menselijker en visueler opgezet: met duidelijke secties, eenvoudige labels en
+        resultaten die direct leesbaar zijn.
+      </p>
+
+      <p>
+        De live versie laat dat goed zien: gebruikers zien eerst hun budget, daarna het netto
+        voordeel en vervolgens een vergelijking tussen huidige situatie en situatie na uitruil.
+        Door die volgorde ontstaat meer overzicht en minder weerstand.
+      </p>
+    </div>
+
+    <div class="two-col-list">
+      <div class="content-card">
+        <h3>Wat belangrijk was</h3>
+        <p>
+          Eenvoudige invoer, duidelijke resultaten, consistente componenten en zo min mogelijk
+          cognitieve ruis. De tool moest functioneel voelen, maar niet droog of bureaucratisch.
+        </p>
+      </div>
+
+      <div class="content-card">
+        <h3>Ontwerpuitkomst</h3>
+        <p>
+          Een interface die meerdere berekeningen ondersteunt, maar toch als één product aanvoelt.
+          Daarmee wordt de drempel lager om de regeling niet alleen te begrijpen, maar ook echt te gebruiken.
+        </p>
+      </div>
+    </div>
+
+    <div class="image-grid image-grid--two">
+      {detailImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="case-section">
+    <p class="eyebrow">Impact</p>
+    <h2 class="case-title">Een tool die duidelijkheid oplevert</h2>
+
+    <div class="content-card">
+      <p>
+        De kracht van deze tool zit niet in visuele effecten, maar in helderheid. Door inhoud,
+        berekening en vervolgstap logisch te combineren, wordt een complexe regeling veel beter
+        toegankelijk voor medewerkers.
+      </p>
+
+      <p>
+        Daarmee is dit project een goed voorbeeld van hoe UX ook in interne of semiadministratieve
+        systemen veel verschil maakt: niet door alles mooier te maken, maar door het begrijpelijker,
+        betrouwbaarder en bruikbaarder te maken.
+      </p>
+    </div>
+  </section>
+</CaseStudyLayout>
+
+<style>
+  .case-section {
+    padding: 4rem 0;
+  }
+
+  @media (max-width: 960px) {
+    .case-section {
+      padding: 3rem 0;
+    }
+  }
+</style>

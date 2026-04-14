@@ -1,0 +1,293 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const showcaseImages = [
+  {
+    src: '/images/cases/by-britt-nails/site-1.jpg',
+    alt: 'Homepage van By Britt Nails',
+  },
+  {
+    src: '/images/cases/by-britt-nails/site-2.jpg',
+    alt: 'Visuele prijslijst van By Britt Nails',
+  },
+  {
+    src: '/images/cases/by-britt-nails/site-3.jpg',
+    alt: 'Portfolio-overzicht met voorbeelden van nagelwerk',
+  },
+  {
+    src: '/images/cases/by-britt-nails/site-4.jpg',
+    alt: 'Mobiele weergave van de website',
+  },
+];
+
+const processImages = [
+  {
+    src: '/images/cases/by-britt-nails/process-1.jpg',
+    alt: 'SEO-structuur of wireframe van de website',
+  },
+  {
+    src: '/images/cases/by-britt-nails/process-2.jpg',
+    alt: 'Design-uitwerking van de visuele prijslijst',
+  },
+  {
+    src: '/images/cases/by-britt-nails/process-3.jpg',
+    alt: 'Contentstructuur of lokale SEO-uitwerking',
+  },
+];
+
+const stats = [
+  {
+    value: '1.6k+',
+    label: 'Actieve gebruikers',
+  },
+  {
+    value: '81%',
+    label: 'Organic Search',
+  },
+  {
+    value: '#2',
+    label: 'Ranking Wageningen',
+  },
+];
+
+const methods = [
+  'Web Design',
+  'Local SEO',
+  'Conversion-focused structure',
+  'Information Architecture',
+  'UI Design',
+  'Content Structuring',
+  'Mobile-first design',
+];
+
+const downloads = [
+  {
+    title: 'SEO en structuur uitwerking',
+    file: '/documents/by-britt-nails-seo.pdf',
+    label: 'PDF / Strategie',
+  },
+  {
+    title: 'Design en contentuitwerking',
+    file: '/documents/by-britt-nails-design.pdf',
+    label: 'PDF / Ontwerp',
+  },
+];
+---
+
+<CaseStudyLayout
+  title="Case Study: By Britt Nails"
+  client="By Britt Nails"
+  role="Web Design / SEO / Conversion"
+  timeline="2025"
+  accent="#a855f7"
+  accentSoft="rgba(168, 85, 247, 0.08)"
+  kicker="Portfolio Case / By Britt Nails"
+  headline="Local SEO Website"
+  intro="Een SEO-gedreven website die lokale zichtbaarheid combineert met een sterke visuele merkuitstraling."
+  challenge="Hoe zorg je dat een lokale nagelstudio online de eerste serieuze optie wordt, zonder afhankelijk te zijn van advertenties of alleen social media?"
+  approach="De aanpak draaide om twee dingen: lokaal gevonden worden én direct overtuigen. Daarom is gewerkt aan een SEO-gedreven structuur, een duidelijke visuele prijslijst en een website die in één oogopslag vertrouwen en professionaliteit uitstraalt."
+  process={[
+    "Lokale zoekintentie vertalen naar een duidelijke SEO-structuur.",
+    "Prijzen, voorbeelden en merkuitstraling samenbrengen in één overzichtelijke ervaring.",
+    "Een visueel sterke website ontwerpen die luxe aanvoelt maar praktisch blijft.",
+    "Content en structuur zo opzetten dat bezoekers snel kunnen beoordelen of de studio bij hen past.",
+    "De website inzetten als zelfstandig acquisitiekanaal, los van advertenties of social media."
+  ]}
+  result="Het resultaat is een website die niet alleen mooi oogt, maar ook concreet klanten aantrekt via lokale zoekopdrachten. Daarmee is de site een echt groeikanaal geworden voor de onderneming."
+>
+  <section class="case-section">
+    <div class="case-grid case-grid--intro">
+      <div>
+        <p class="eyebrow">Context</p>
+        <h2 class="case-title">Een lokale dienstverlener die online echt zichtbaar moest worden</h2>
+
+        <p>
+          Voor By Britt Nails lag de vraag niet alleen bij een mooie website. De echte uitdaging was
+          strategischer: hoe word je lokaal de logische keuze als mensen zoeken naar een nagelstudio
+          in Wageningen?
+        </p>
+
+        <p>
+          De site moest dus twee dingen tegelijk doen. Enerzijds gevonden worden op relevante lokale
+          zoekopdrachten, anderzijds direct overtuigen met sfeer, duidelijkheid en vertrouwen. Op de
+          TwinPixel-case wordt dat samengevat als een SEO-gedreven design waarmee de studio dominant
+          zichtbaar werd in lokale zoekresultaten. 
+        </p>
+
+        <p>
+          Daarnaast wilde Britt prijzen en voorbeeldfoto’s direct op één plek tonen, in een stijl die
+          aansluit op haar paarse merkidentiteit. Ook dat komt expliciet terug in de oorspronkelijke
+          casebeschrijving.
+        </p>
+      </div>
+
+      <aside class="case-meta-card">
+        <p class="eyebrow">Focus</p>
+        <ul>
+          <li>Lokaal SEO-gedreven webdesign</li>
+          <li>Visuele prijslijst en portfolio in één flow</li>
+          <li>Conversiegerichte structuur</li>
+          <li>Merkuitstraling afgestemd op de doelgroep</li>
+          <li>Website als zelfstandig acquisitiekanaal</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <p class="eyebrow">Impact</p>
+    <h2 class="case-title">Sterke cijfers uit een lokale niche</h2>
+
+    <div class="stats-grid">
+      {stats.map((stat) => (
+        <div class="stat-card">
+          <strong>{stat.value}</strong>
+          <span>{stat.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="content-card">
+      <p>
+        Volgens de TwinPixel-case komt <strong>81%</strong> van de bezoekers binnen via
+        <strong> Organic Search</strong>, telt de site <strong>1.6k+ actieve gebruikers</strong> en
+        staat By Britt Nails op <strong>#2 in Wageningen</strong>. Dat laat goed zien dat de website
+        niet alleen visueel werkt, maar ook echt verkeer en zichtbaarheid oplevert. 
+      </p>
+
+      <p>
+        Het belangrijkste effect daarvan is misschien nog wel dat de instroom van nieuwe klanten niet
+        volledig hoeft te leunen op advertenties of social media. Op de originele case staat dat de
+        website daardoor echt het werk voor haar doet, dag en nacht.
+      </p>
+    </div>
+  </section>
+
+  <section class="case-section">
+    <p class="eyebrow">Strategy</p>
+    <h2 class="case-title">Lokale vindbaarheid combineren met directe overtuiging</h2>
+
+    <div class="content-card">
+      <p>
+        De kern van de strategie zat in de combinatie van zoekgedrag en uitstraling. Mensen zoeken
+        lokaal op concrete termen, zoals nagelstudio’s in hun eigen stad. Daar moet je technisch en
+        inhoudelijk op aansluiten. Tegelijk beslist een bezoeker binnen een paar seconden of een
+        bedrijf professioneel en passend aanvoelt.
+      </p>
+
+      <p>
+        Daarom is de website niet alleen als visueel portfolio opgebouwd, maar ook als een duidelijke
+        commerciële flow. De TwinPixel-case noemt daarbij expliciet twee hoofdonderdelen: een lokaal
+        SEO-plan en een visuele prijslijst waarin prijzen en voorbeelden samenkomen.
+      </p>
+    </div>
+
+    <div class="content-card">
+      <div class="method-grid">
+        {methods.map((method) => (
+          <span class="method-pill">{method}</span>
+        ))}
+      </div>
+    </div>
+
+    <div class="image-grid image-grid--three">
+      {processImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="case-section">
+    <p class="eyebrow">Design</p>
+    <h2 class="case-title">Een website die luxe voelt, maar praktisch blijft</h2>
+
+    <div class="content-card">
+      <p>
+        Bij een bedrijf als dit is uitstraling geen bijzaak. Het design moet direct een gevoel van
+        kwaliteit geven. Tegelijk moet de gebruiker snel kunnen zien wat er wordt aangeboden, wat het
+        kost en welk werk al eerder is geleverd.
+      </p>
+
+      <p>
+        Juist daarom werkt een combinatie van portfolio en prijslijst hier zo goed. In plaats van dat
+        een bezoeker door losse pagina’s moet klikken, ontstaat één compacte ervaring waarin merk,
+        bewijs en prijs samenkomen.
+      </p>
+    </div>
+
+    <div class="image-grid image-grid--four">
+      {showcaseImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <section class="case-section">
+    <p class="eyebrow">Result</p>
+    <h2 class="case-title">Een website die als acquisitiekanaal werkt</h2>
+
+    <div class="content-card">
+      <p>
+        De grootste winst van deze case is dat de website niet alleen een online visitekaartje is.
+        Volgens de originele case is de site een echt acquisitiekanaal geworden, waardoor Britt minder
+        afhankelijk is van social media voor haar instroom van nieuwe klanten. 
+      </p>
+
+      <p>
+        Dat maakt dit project sterk: techniek, zoekgedrag en visuele positionering komen hier samen in
+        één website die niet alleen mooi oogt, maar ook zakelijk resultaat ondersteunt. 
+      </p>
+    </div>
+  </section>
+
+</CaseStudyLayout>
+
+<style>
+  .case-section {
+    padding: 4rem 0;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border-radius: 1.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(8px);
+  }
+
+  .stat-card strong {
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 900;
+    font-style: italic;
+    line-height: 0.95;
+  }
+
+  .stat-card span {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 960px) {
+    .case-section {
+      padding: 3rem 0;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

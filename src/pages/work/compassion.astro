@@ -1,0 +1,439 @@
+---
+import CaseStudyLayout from '../../layouts/CaseStudyLayout.astro';
+
+const appImages = [
+  {
+    src: '/images/cases/compassion/app-1.jpg',
+    alt: 'Home of overzichtsscherm van de Compassion reisapp',
+  },
+  {
+    src: '/images/cases/compassion/app-2.jpg',
+    alt: 'Reisinformatie of briefing-scherm binnen de app',
+  },
+  {
+    src: '/images/cases/compassion/app-3.jpg',
+    alt: 'Dagboekfunctie of andere kernfunctionaliteit van de reisapp',
+  },
+  {
+    src: '/images/cases/compassion/app-4.jpg',
+    alt: 'Extra scherm uit de mobiele applicatie',
+  },
+];
+
+const processImages = [
+  {
+    src: '/images/cases/compassion/process-1.jpg',
+    alt: 'Wireframes, informatiearchitectuur of flowdiagram',
+  },
+  {
+    src: '/images/cases/compassion/process-2.jpg',
+    alt: 'UX-uitwerking of Figma-schermen',
+  },
+  {
+    src: '/images/cases/compassion/process-3.jpg',
+    alt: 'CMS-structuur of systeemoverzicht',
+  },
+];
+
+const techImages = [
+  {
+    src: '/images/cases/compassion/tech-1.jpg',
+    alt: 'Architectuur of technisch systeemoverzicht',
+  },
+  {
+    src: '/images/cases/compassion/tech-2.jpg',
+    alt: 'Overdrachtsdocumentatie of testresultaten',
+  },
+];
+
+const methods = [
+  'Desk research',
+  'Stakeholderanalyse',
+  'Use cases & user stories',
+  'MoSCoW-prioritering',
+  'Informatiearchitectuur',
+  'Wireframing',
+  'UX testing',
+  'Usability testing',
+  'Code reviews',
+  'Handmatige tests',
+  'Geautomatiseerde tests',
+  'Documentatie & overdracht',
+];
+
+const downloads = [
+  {
+    title: 'Onderzoeksverslag en digitale transformatie',
+    file: '/documents/compassion-onderzoeksverslag.pdf',
+    label: 'PDF / Volledig verslag',
+  },
+  {
+    title: 'UX-uitwerking en conceptdocument',
+    file: '/documents/compassion-ux-uitwerking.pdf',
+    label: 'PDF / Ontwerp en onderbouwing',
+  },
+  {
+    title: 'Overdrachtsdocument / technische documentatie',
+    file: '/documents/compassion-overdracht.pdf',
+    label: 'PDF / Handover',
+  },
+];
+---
+
+<CaseStudyLayout
+  title="Case Study: Compassion"
+  client="Compassion"
+  role="UX / Product / Development"
+  timeline="2024"
+  accent="#2f89ff"
+  accentSoft="rgba(47, 137, 255, 0.08)"
+  kicker="Confidential Case / Compassion"
+  headline="Reis-app Development"
+  intro="Groepsproject waarin we een papieren reisproces digitaliseerden naar een mobiele app voor internationale sponsorreizen."
+  challenge="Hoe vervang je papieren reisgidsen door een digitale oplossing die bruikbaar is voor reizigers en field experience, ook in minder ideale omstandigheden zoals beperkte internetverbinding, hoge informatiedruk en een dynamische reiscontext?"
+  approach="In dit project werkte ik samen met drie andere studenten aan de doorontwikkeling van een reisapp voor Compassion. Mijn rol lag vooral in UX, productkeuzes, structuur en verslaglegging. We bouwden voort op een eerder MVP en werkten toe naar een oplossing die inhoudelijk, technisch en organisatorisch beter aansloot op de bestaande systemen en processen van Compassion."
+  process={[
+    "Analyse van het bestaande papieren proces en stakeholders",
+    "Vertaling naar requirements, use cases en user stories",
+    "UX-routes en informatiearchitectuur uitwerken",
+    "Doorontwikkeling van offline en systeemkoppelingen",
+    "Testen en voorbereiding van overdracht"
+  ]}
+  result="Het project resulteerde in een werkende en geteste reisapp-propositie voor Compassion, inclusief UX-uitwerking, technische onderbouwing, testresultaten en overdraagbare documentatie."
+  tools={[
+    "Figma",
+    "React Native",
+    "Strapi",
+    "Azure B2C",
+    "UX Research",
+    "Testing"
+  ]}
+  downloads={downloads}
+>
+
+  <!-- CONTEXT -->
+  <section class="case-section">
+    <div class="case-grid case-grid--intro">
+      <div>
+        <p class="eyebrow">Context</p>
+        <h2>Van papieren reisgidsen naar een digitale reiservaring</h2>
+
+        <p>
+          Binnen Compassion werden internationale reizen ondersteund met papieren gidsen.
+          Deze bevatten alle informatie voor reizigers en field experience.
+          De wens was om dit proces te digitaliseren naar een app.
+        </p>
+
+        <p>
+          In de praktijk betekende dit dat we moesten omgaan met meerdere gebruikers,
+          gevoelige informatie, beperkte internetverbinding en de noodzaak om de oplossing
+          overdraagbaar te maken binnen de organisatie.
+        </p>
+
+        <p>
+          Ik werkte hier in mijn tweede jaar aan samen met drie andere studenten.
+          Mijn focus lag op UX, structuur en verslaglegging.
+        </p>
+      </div>
+
+      <aside class="case-meta-card">
+        <p class="eyebrow">Mijn bijdrage</p>
+        <ul>
+          <li>UX en productstructuur</li>
+          <li>Informatiearchitectuur</li>
+          <li>Use cases en flows</li>
+          <li>Verslaglegging</li>
+          <li>Overdracht</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- UX -->
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">UX Design</p>
+      <h2>Structuur en gebruik in een reiscontext</h2>
+    </div>
+
+    <div class="content-card">
+      <p>
+        De app moest vooral snel en duidelijk werken. Reizigers moeten direct kunnen
+        vinden wat ze nodig hebben, zonder afhankelijk te zijn van papieren gidsen.
+      </p>
+
+      <p>
+        Daarom lag de focus op overzicht, herkenning en snelheid van gebruik.
+      </p>
+    </div>
+
+    <div class="image-grid image-grid--four">
+      {appImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">Process</p>
+      <h2>Van analyse naar ontwerp</h2>
+    </div>
+
+    <div class="content-card">
+      <div class="method-grid">
+        {methods.map((method) => (
+          <span class="method-pill">{method}</span>
+        ))}
+      </div>
+    </div>
+
+    <div class="image-grid image-grid--three">
+      {processImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <section class="case-section">
+    <div class="section-heading">
+      <p class="eyebrow">Tech & Testing</p>
+      <h2 class="case-title">Van prototype naar overdraagbare oplossing</h2>
+    </div>
+
+    <div class="content-card">
+      <p>
+        Naast UX speelde techniek een belangrijke rol. De app is opgebouwd met
+        React Native, Strapi en Azure B2C. Daarnaast is rekening gehouden met
+        toekomstige koppelingen met systemen zoals Salesforce.
+      </p>
+
+      <p>
+        De oplossing is getest via handmatige tests en gebruikerstests.
+        Dit gaf inzicht in verbeterpunten en bruikbaarheid.
+      </p>
+    </div>
+
+    <div class="image-grid image-grid--two">
+      {techImages.map((image) => (
+        <figure class="image-card">
+          <img src={image.src} alt={image.alt} loading="lazy" />
+        </figure>
+      ))}
+    </div>
+  </section>
+  
+  <section class="case-section">
+  <div class="section-heading">
+    <p class="eyebrow">Downloads</p>
+    <h2>Supporting documents</h2>
+  </div>
+
+  <div class="download-grid">
+    {downloads.map((download) => (
+      <a
+        class="download-card"
+        href={download.file}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span class="download-label">{download.label}</span>
+        <strong>{download.title}</strong>
+        <span class="download-action">Open document</span>
+      </a>
+    ))}
+  </div>
+</section>
+
+</CaseStudyLayout>
+
+<style>
+  .case-section {
+    padding: 4rem 0;
+  }
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.download-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.5rem;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.03);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.download-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(47, 137, 255, 0.35); /* compassion kleur */
+  background: rgba(47, 137, 255, 0.06);
+}
+
+.download-label,
+.download-action {
+  font-size: 0.88rem;
+  opacity: 0.75;
+}
+  .case-section p {
+    color: rgba(255, 255, 255, 0.74);
+    line-height: 1.85;
+  }
+
+  .section-heading {
+    margin-bottom: 2rem;
+  }
+
+  .section-heading h2 {
+    margin: 0.35rem 0 0;
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+  }
+
+  .case-section h3 {
+    margin: 0 0 0.65rem;
+    font-size: 1.08rem;
+    line-height: 1.2;
+  }
+
+  .content-card p + p {
+    margin-top: 1rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.25rem;
+    color: var(--accent, #2f89ff);
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  .case-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.95fr);
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .case-grid--intro {
+    align-items: stretch;
+  }
+
+  .two-col-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 1.25rem;
+  }
+
+  .content-card,
+  .quote-card,
+  .case-meta-card,
+  .image-card {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 1.75rem;
+    padding: 1.5rem;
+    backdrop-filter: blur(8px);
+  }
+
+  .content-card.compact {
+    height: 100%;
+  }
+
+  .quote-card p {
+    margin: 0;
+    font-size: 1.08rem;
+    line-height: 1.7;
+  }
+
+  .case-meta-card ul,
+  .clean-list {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+
+  .case-meta-card li,
+  .clean-list li {
+    margin: 0.55rem 0;
+    color: rgba(255, 255, 255, 0.76);
+  }
+
+  .method-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .method-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.82);
+  }
+
+  .image-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .image-grid--three {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .image-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .image-card {
+    padding: 0;
+    overflow: hidden;
+    min-height: 260px;
+  }
+
+  .image-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 260px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 960px) {
+    .case-grid,
+    .two-col-list,
+    .image-grid--three,
+    .image-grid--four,
+    .image-grid--two {
+      grid-template-columns: 1fr;
+    }
+
+    .case-section {
+      padding: 3rem 0;
+    }
+  }
+</style>

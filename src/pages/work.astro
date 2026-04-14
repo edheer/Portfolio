@@ -1,0 +1,103 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import WorkGridItem from '../components/WorkGridItem.astro';
+import BrandingModal from '../components/BrandingModal.tsx';
+import Footer from '../components/Footer.astro';
+
+const allProjects = [
+  {
+    title: "Twinpixel Studio",
+    category: "Agency / UX",
+    year: "2025",
+    span: "md:col-span-8",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026",
+    description: "Als co-founder van Twinpixel heb ik de volledige digitale strategie opgezet. Een platform waar high-end design en techniek samenkomen voor moderne ondernemers.",
+    link: "https://twinpixel.nl"
+  },
+{
+  title: "WUR Rekentool",
+  category: "UX / Frontend",
+  year: "2025",
+  span: "md:col-span-4",
+  image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000",
+  description: "Een gebruiksvriendelijke rekentool die complexe uitruilregelingen begrijpelijk maakt voor medewerkers.",
+  link: "/work/wur-rekentool"
+},
+  {
+    title: "by Britt Nails",
+    category: "branding",
+    year: "2025",
+    span: "md:col-span-4",
+    image: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1000",
+    description: "Interactieve website voor een audio-engineering studio met focus op motion design.",
+    link: "/work/bybrittnails"
+  },
+  {
+    title: "S.V.NULL Identity",
+    category: "Community / PR",
+    year: "2023",
+    span: "md:col-span-8",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200",
+    description: "De volledige visuele identiteit en PR-strategie voor de studievereniging HBO-ICT.",
+  },
+  {
+    title: "Compassion App",
+    category: "Mobile Design",
+    year: "2023",
+    span: "md:col-span-6",
+    image: "https://images.unsplash.com/photo-1454165833767-027ff39c4672?q=80&w=1000",
+    description: "User research en interface design voor een internationale reis-app ter ondersteuning van sponsorreizen.",
+  },
+  {
+    title: "Leger des Heils",
+    category: "UX Research",
+    year: "2023",
+    span: "md:col-span-6",
+    image: "https://images.unsplash.com/photo-1469571483333-f33f757f276c?q=80&w=1000",
+    description: "Onderzoek naar digitale oplossingen voor cliënten in de zorgsector.",
+  }
+];
+---
+
+<MainLayout title="Work Archive">
+  <section class="py-20">
+    <!-- Header -->
+    <div class="max-w-7xl mx-auto px-6 mt-20 mb-32">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="w-2 h-2 bg-[#befc28] rounded-full animate-pulse"></span>
+            <span class="text-[10px] font-black uppercase tracking-[0.5em] text-white/40 italic">The archive // 2022 — 2026</span>
+        </div>
+        <h1 class="text-[clamp(3.5rem,14vw,10rem)] font-black italic tracking-tighter uppercase leading-[0.75]">
+            SELECTED <br /> <span class="text-transparent" style="-webkit-text-stroke: 2px #befc28;">PROJECTS</span>
+        </h1>
+    </div>
+
+    <!-- The Bento Grid -->
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-6">
+        
+        <!-- Eerste rij projecten -->
+        {allProjects.slice(0, 2).map(p => <WorkGridItem {...p} />)}
+
+        <!-- Branding Showcase "Mega-Tile" -->
+        <div class="md:col-span-12">
+            <BrandingModal client:load />
+        </div>
+
+        <!-- Tweede rij projecten -->
+        {allProjects.slice(2, 4).map(p => <WorkGridItem {...p} />)}
+
+        <!-- Derde rij projecten -->
+        {allProjects.slice(4, 6).map(p => <WorkGridItem {...p} />)}
+
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="max-w-7xl mx-auto px-6 py-40 text-center">
+        <h2 class="text-5xl md:text-8xl font-black italic uppercase tracking-tighter mb-12">Iets nieuws <br/> <span class="text-[#befc28]">beginnen?</span></h2>
+        <a href="mailto:Emdeheer@gmail.com" class="inline-block bg-white text-black px-12 py-5 rounded-full font-black uppercase tracking-widest hover:bg-[#befc28] transition-colors">
+            Start een project ↗
+        </a>
+    </div>
+  </section>
+  <Footer />
+</MainLayout>

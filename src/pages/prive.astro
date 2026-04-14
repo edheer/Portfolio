@@ -1,0 +1,110 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PasswordGate from '../components/PasswordGate.tsx';
+
+const cases = [
+  {
+    slug: "legerdesheils",
+    id: "01",
+    stage: "Stage: Leger des Heils",
+    title: "Client App Design",
+    description:
+      "Onderzoek en ontwerp van een digitaal platform voor cliënten, gericht op mensgericht ontwerp, toegankelijkheid en betere ondersteuning binnen de zorgcontext.",
+    tags: ["UX Research", "Service Design", "Consultancy"],
+    image: "/legerdesheils.png",
+    colour: "red",
+  },
+    {
+    slug: "compassion",
+    id: "02",
+    stage: "Stage: Compassion",
+    title: "Reis-app Development",
+    description:
+      "Een applicatie ontworpen en ontwikkeld ter ondersteuning van internationale sponsorreizen, met focus op procesoptimalisatie, gebruiksvriendelijkheid en betrouwbaarheid in uitdagende omgevingen.",
+    tags: ["Research", "UX Design", "Development"],
+    image: "/Compassion.png",
+  }
+];
+---
+
+<MainLayout title="Confidential Case Studies">
+  <div class="mesh-gradient"></div>
+
+  <PasswordGate client:load>
+    <section class="relative py-20 md:py-28">
+      <div class="mx-auto max-w-7xl px-6">
+        <div class="max-w-3xl mb-16 md:mb-24">
+          <p class="text-[11px] uppercase tracking-[0.35em] text-[#befc28] font-semibold mb-4">
+            Confidential Portfolio
+          </p>
+
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black italic tracking-tight leading-none">
+            CASE <span class="text-gradient">STUDIES</span>
+          </h1>
+
+          <p class="mt-6 text-white/60 text-base md:text-lg leading-relaxed max-w-2xl">
+            Een selectie van vertrouwelijke projecten waarin strategie, UX, onderzoek en development samenkomen.
+          </p>
+        </div>
+
+        <div class="space-y-10 md:space-y-12">
+          {cases.map((item) => (
+            <article class="group green-border-hover relative overflow-hidden rounded-[2rem] md:rounded-[2.5rem] bg-white/[0.02] backdrop-blur-sm">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-0 md:gap-8 items-stretch">
+                
+                <!-- IMAGE SIDE -->
+                <div class="relative min-h-[260px] md:min-h-[380px] overflow-hidden border-b md:border-b-0 md:border-r border-white/10">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent"></div>
+
+                  <div class="absolute top-6 left-6 text-[11px] uppercase tracking-[0.3em] text-white/50 font-semibold z-10">
+                    {item.id}
+                  </div>
+                </div>
+
+                <!-- CONTENT SIDE -->
+                <div class="p-8 sm:p-10 md:p-12 flex flex-col justify-center">
+                  <p class="text-[#befc28] text-[11px] font-mono uppercase tracking-[0.28em] mb-4">
+                    {item.stage}
+                  </p>
+
+                  <h2 class="text-3xl sm:text-4xl md:text-5xl font-black italic uppercase tracking-tight leading-[0.95] mb-5">
+                    {item.title}
+                  </h2>
+
+                  <p class="text-white/60 text-base md:text-lg leading-relaxed max-w-xl">
+                    {item.description}
+                  </p>
+
+                  <div class="flex flex-wrap gap-3 mt-8">
+                    {item.tags.map((tag) => (
+                      <span class="px-4 py-2 border border-white/15 rounded-full text-[11px] uppercase tracking-wider text-white/70 bg-white/[0.03]">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div class="mt-10">
+                    <a
+                      href={`/work/${item.slug}`}
+                      class="inline-flex items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#befc28] group/link"
+                    >
+                      Open Case
+                      <span class="transition-transform duration-300 group-hover/link:translate-x-1">→</span>
+                    </a>
+                  </div>
+                </div>
+
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </PasswordGate>
+</MainLayout>

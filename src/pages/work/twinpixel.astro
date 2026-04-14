@@ -1,0 +1,329 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import Footer from '../../components/Footer.astro';
+
+const sections = [
+  { id: "brief", label: "01 // The Rationale" },
+  { id: "branding", label: "02 // Brand Identity" },
+  { id: "ux", label: "03 // Development" },
+  { id: "closing", label: "04 // Vision" }
+];
+
+const techStack = ["Astro 5.0", "Golang", "Tailwind v4", "TypeScript", "Figma"];
+---
+
+<MainLayout title="Case: Twinpixel Studio">
+  <!-- 1. IMMERSIVE HERO -->
+  <section class="relative min-h-[75vh] lg:min-h-[85vh] w-full overflow-hidden flex flex-col justify-end pb-12 lg:pb-20">
+    <!-- Achtergrond -->
+    <div class="absolute inset-0 -z-20">
+      <img
+        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2026"
+        class="w-full h-full object-cover grayscale opacity-20 scale-105 animate-slow-zoom"
+        alt="Twinpixel Cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-transparent z-20"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto w-full px-5 md:px-6 relative z-30">
+      <div class="mb-8 flex items-center gap-4 animate-fade-in">
+        <a
+          href="/work"
+          class="group flex items-center gap-2 text-[#2f89ff] font-bold uppercase tracking-[0.35em] text-[10px]"
+        >
+          <span class="group-hover:-translate-x-1.5 transition-transform">←</span>
+          Portfolio Archive
+        </a>
+      </div>
+
+      <h1 class="text-[clamp(3rem,9vw,8rem)] font-black italic tracking-tight uppercase leading-[0.88] mb-6">
+        TWIN<span class="text-[#2f89ff]">PIXEL</span> <br />
+        <span class="text-transparent" style="-webkit-text-stroke: 1.5px white;">STUDIO</span>
+      </h1>
+
+      <!-- Project Specifics -->
+      <div class="flex flex-wrap gap-x-10 gap-y-6 border-t border-white/10 pt-8">
+        <div>
+          <p class="text-[9px] font-bold uppercase tracking-widest text-white/30 mb-2 italic">Role</p>
+          <p class="text-sm font-bold uppercase italic text-[#2f89ff]">Co-founder & Lead Designer</p>
+        </div>
+
+        <div>
+          <p class="text-[9px] font-bold uppercase tracking-widest text-white/30 mb-2 italic">Tech Stack</p>
+          <div class="flex flex-wrap gap-2 mt-1">
+            {techStack.slice(0, 3).map((t) => (
+              <span class="text-[10px] text-white/70 bg-white/5 px-2.5 py-1 rounded border border-white/10 uppercase font-bold">
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <p class="text-[9px] font-bold uppercase tracking-widest text-white/30 mb-2 italic">Timeline</p>
+          <p class="text-sm font-bold uppercase italic text-white/80">2024 — Present</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. MAIN CONTENT MET STICKY NAVIGATOR -->
+  <div class="max-w-7xl mx-auto px-5 md:px-6 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 relative">
+    <!-- STICKY SIDEBAR -->
+    <aside class="hidden lg:block lg:col-span-3 h-fit sticky top-24 self-start">
+      <div class="space-y-8">
+        <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-white/20">Project Navigator</p>
+
+        <nav class="flex flex-col gap-4">
+          {sections.map((section) => (
+            <a
+              href={`#${section.id}`}
+              class="group flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-white/40 hover:text-[#2f89ff] transition-all"
+            >
+              <span class="w-8 h-px bg-white/10 group-hover:bg-[#2f89ff] group-hover:w-12 transition-all"></span>
+              {section.label}
+            </a>
+          ))}
+        </nav>
+
+        <div class="pt-10">
+          <div class="p-5 bg-[#2f89ff]/5 border border-[#2f89ff]/20 rounded-2xl">
+            <p class="text-[9px] font-bold uppercase tracking-widest text-[#2f89ff] mb-3">Core Focus</p>
+            <p class="text-xs text-white/60 leading-relaxed italic">
+              "De verbinding maken tussen brute technische kracht en verfijnde digitale esthetiek."
+            </p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="lg:col-span-9 space-y-28 lg:space-y-40 pb-24 lg:pb-32">
+      <!-- 01: THE RATIONALE -->
+      <section id="brief" class="scroll-mt-28 lg:scroll-mt-36">
+        <span class="text-[#2f89ff] font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block">
+          // 01 The Rationale
+        </span>
+
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-8 leading-[0.95]">
+          De Visie achter <br />
+          de <span class="text-transparent" style="-webkit-text-stroke: 1px white;">Studio</span>
+        </h2>
+
+        <div class="max-w-3xl">
+          <p class="text-lg md:text-xl text-white/70 leading-8 font-light mb-8">
+            Bij Twinpixel bouwen we geen standaard websites. We bouwen digitale ecosystemen.
+            Voor onze eigen identiteit was de vraag: hoe vertalen we complexe IT-consultancy
+            naar een toegankelijk en high-end design?
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mt-10">
+            <div class="p-6 md:p-8 bg-neutral-900/50 rounded-3xl border border-white/5">
+              <h4 class="text-[#7c3aed] font-bold text-xs uppercase mb-3 tracking-widest italic">Uitdaging</h4>
+              <p class="text-sm text-white/50 leading-7 italic">
+                Designbureau's zijn vaak te ‘fluffy’. Wij wilden juist de nadruk leggen op de technische fundering.
+              </p>
+            </div>
+
+            <div class="p-6 md:p-8 bg-neutral-900/50 rounded-3xl border border-white/5">
+              <h4 class="text-[#22c55e] font-bold text-xs uppercase mb-3 tracking-widest italic">Oplossing</h4>
+              <p class="text-sm text-white/50 leading-7 italic">
+                Een identiteit waar de ‘X’ centraal staat als kruispunt tussen code en creatie.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 02: BRANDING -->
+      <section id="branding" class="scroll-mt-28 lg:scroll-mt-36">
+        <span class="text-[#2f89ff] font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block">
+          // 02 Brand Identity
+        </span>
+
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-10 leading-[0.95]">
+          The Blue <br />
+          <span class="text-transparent" style="-webkit-text-stroke: 1px white;">Print</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8">
+          <!-- Logo Spot -->
+          <div class="md:col-span-8 aspect-[16/10] md:aspect-video bg-[#0a0a0a] rounded-3xl border border-white/10 flex items-center justify-center relative overflow-hidden group p-8">
+            <div class="text-center relative z-10">
+              <h3 class="text-4xl md:text-6xl lg:text-7xl font-black italic tracking-tight uppercase leading-none">
+                TWIN<span class="text-[#2f89ff]">PIXEL</span>
+              </h3>
+              <p class="text-[#2f89ff] text-[10px] font-bold tracking-[0.7em] uppercase mt-4">
+                Webdesign & Dev
+              </p>
+            </div>
+            <div class="absolute inset-0 bg-[#2f89ff]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </div>
+
+          <!-- Color Grid -->
+          <div class="md:col-span-4 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-1 gap-4">
+            <div class="bg-[#2f89ff] p-5 rounded-2xl flex flex-col justify-between text-white min-h-[130px]">
+              <span class="text-[9px] font-bold uppercase tracking-widest opacity-70">Primary Blue</span>
+              <span class="font-mono text-sm">#2F89FF</span>
+            </div>
+
+            <div class="bg-[#7c3aed] p-5 rounded-2xl flex flex-col justify-between text-white min-h-[130px]">
+              <span class="text-[9px] font-bold uppercase tracking-widest opacity-70">Accent Purple</span>
+              <span class="font-mono text-sm">#7C3AED</span>
+            </div>
+
+            <div class="bg-[#22c55e] p-5 rounded-2xl flex flex-col justify-between text-white min-h-[130px]">
+              <span class="text-[9px] font-bold uppercase tracking-widest opacity-70">Accent Green</span>
+              <span class="font-mono text-sm">#22C55E</span>
+            </div>
+          </div>
+
+          <!-- Typography -->
+          <div class="md:col-span-12 bg-white text-black p-8 md:p-12 rounded-3xl">
+            <p class="text-[10px] font-bold uppercase tracking-widest mb-8 opacity-30 italic">
+              Typography System
+            </p>
+            <p class="text-3xl md:text-6xl lg:text-7xl font-black italic uppercase tracking-tight leading-none mb-4">
+              ui-sans-serif
+            </p>
+            <p class="text-lg md:text-2xl font-light tracking-wide uppercase italic opacity-60 leading-relaxed">
+              System UI / Apple / Segoe UI / Roboto
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 03: DEVELOPMENT -->
+      <section id="ux" class="scroll-mt-28 lg:scroll-mt-36">
+        <span class="text-[#2f89ff] font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block">
+          // 03 Development
+        </span>
+
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-8 leading-[0.95]">
+          Engineering <br />
+          <span class="text-transparent" style="-webkit-text-stroke: 1px white;">Excellence</span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-start mb-12">
+          <p class="text-lg text-white/65 leading-8 font-light italic">
+            Performance is geen bijzaak, het is het fundament. De Twinpixel-site is gebouwd
+            met focus op sterke Lighthouse scores, snelle Astro builds en schaalbare Golang-integraties.
+          </p>
+
+          <div class="space-y-4 rounded-3xl border border-white/10 bg-white/[0.02] p-6">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <span class="text-xs uppercase font-bold tracking-widest text-white/40">UX Performance</span>
+              <span class="text-[#22c55e] font-black italic text-lg">100%</span>
+            </div>
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <span class="text-xs uppercase font-bold tracking-widest text-white/40">SEO Score</span>
+              <span class="text-[#22c55e] font-black italic text-lg">100%</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs uppercase font-bold tracking-widest text-white/40">Build Approach</span>
+              <span class="text-white/70 font-bold italic text-sm">Fast & lean</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] md:rounded-[3rem] overflow-hidden border border-white/10 bg-neutral-900 aspect-video shadow-2xl relative group">
+          <img
+            src="/ik.jpeg"
+            alt="Twinpixel UI"
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+          />
+          <div class="absolute top-4 left-4 md:top-6 md:left-6 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+            <span class="text-[9px] font-bold uppercase tracking-widest text-[#2f89ff]">Main Visual Showcase</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 04: VISION -->
+      <section id="closing" class="scroll-mt-28 lg:scroll-mt-36">
+        <span class="text-[#2f89ff] font-bold text-[10px] uppercase tracking-[0.4em] mb-5 block">
+          // 04 Vision
+        </span>
+
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-black italic uppercase tracking-tight mb-8 leading-[0.95]">
+          De <span class="text-[#2f89ff]">Toekomst</span>
+        </h2>
+
+        <div class="p-8 md:p-14 lg:p-16 bg-neutral-900 rounded-[2rem] md:rounded-[3rem] border border-[#2f89ff]/20 relative overflow-hidden group">
+          <p class="text-xl md:text-3xl lg:text-4xl font-bold italic leading-tight text-white/85 relative z-10 max-w-4xl">
+            "Twinpixel is het bewijs dat technische expertise en esthetische perfectie elkaar
+            niet uitsluiten, maar juist versterken."
+          </p>
+          <div class="absolute -bottom-20 -right-20 w-72 h-72 bg-[#2f89ff]/10 blur-[100px] rounded-full group-hover:bg-[#2f89ff]/20 transition-all"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- NEXT PROJECT FOOTER -->
+  <section class="py-24 md:py-32 border-t border-white/10">
+    <div class="max-w-7xl mx-auto px-5 md:px-6">
+      <a href="/work" class="group flex flex-col items-center text-center">
+        <span class="text-[10px] font-bold uppercase tracking-[0.4em] text-white/20 mb-8">
+          Next Exploration
+        </span>
+        <h2 class="text-4xl md:text-6xl lg:text-8xl font-black italic uppercase tracking-tight group-hover:scale-95 transition-transform duration-700 leading-none">
+          WUR <span class="text-transparent" style="-webkit-text-stroke: 1.5px white;">RESEARCH</span>
+        </h2>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</MainLayout>
+
+<style is:global>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  span,
+  a,
+  div {
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif !important;
+  }
+
+  @keyframes slow-zoom {
+    from {
+      transform: scale(1.02);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+
+  .animate-slow-zoom {
+    animation: slow-zoom 20s ease-in-out infinite alternate;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.9s ease-out forwards;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: #0a0a0a;
+  }
+
+  body {
+    color: white;
+    overflow-x: hidden;
+  }
+</style>

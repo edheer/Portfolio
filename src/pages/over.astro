@@ -1,0 +1,216 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import Footer from '../components/Footer.astro';
+
+// De skills data
+const skills = [
+  { name: "JavaScript (ES6+)", level: "90%", label: "Engine" },
+  { name: "Astro Framework", level: "95%", label: "Native" },
+  { name: "Golang", level: "75%", label: "Backend" },
+  { name: "HTML & CSS", level: "100%", label: "Expert" },
+  { name: "C++", level: "65%", label: "Logic" },
+  { name: "Canva & Visuals", level: "85%", label: "Design" },
+];
+---
+
+<MainLayout title="Story — Emma de Heer">
+  
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- 1. HERO -->
+    <section class="pt-20 mb-32 animate-fade-in">
+        <div class="flex items-center gap-3 mb-6">
+            <span class="w-2 h-2 bg-[#befc28] rounded-full pulse-glow"></span>
+            <span class="text-[#befc28] text-[10px] font-black uppercase tracking-[0.5em]">The Human Behind the Code</span>
+        </div>
+        <h1 class="text-[clamp(3.5rem,14vw,10rem)] font-black italic tracking-tighter uppercase leading-[0.75]">
+            BEYOND <br /> <span class="text-transparent" style="-webkit-text-stroke: 1.5px white;">THE PIXELS</span>
+        </h1>
+    </section>
+
+    <!-- 2. BIO SECTIE -->
+    <section class="grid grid-cols-1 md:grid-cols-12 gap-20 items-start mb-40">
+        <div class="md:col-span-5 md:sticky md:top-32">
+            <div class="relative aspect-[3/4] rounded-[2rem] overflow-hidden border border-white/10 group">
+         <img 
+            src="/ik.jpeg" 
+            alt="Emma de Heer" 
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-1000"
+        />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                <div class="absolute bottom-8 left-8 text-left">
+                    <p class="text-[10px] font-mono uppercase tracking-widest text-white/40 mb-1">// Location</p>
+                    <p class="text-xl font-bold italic">Woudenberg, NL</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:col-span-7 space-y-12 text-left">
+            <div class="space-y-6">
+                <p class="text-3xl md:text-5xl font-black italic uppercase tracking-tighter leading-none">
+                    Ik ben <span class="text-[#befc28]">Emma de Heer</span>, Een ontwerper die gelooft dat vorm en functie samen spreken.
+                </p>
+                <p class="text-lg md:text-xl text-white/60 leading-relaxed font-light">
+                    Mijn reis begon aan de <span class="text-white font-bold italic">Christelijke Hogeschool Ede</span> (HBO-ICT). <br/> En is nu verder aan het gaan bij de <span class="text-white font-bold italic">Universiteit van Twente</span> (Interaction technology)<br/><br/>
+                  Als <span class="text-white font-bold italic">UX Designer bij de WUR</span> en <span class="text-white font-bold italic">Co-founder van Twinpixel</span>, combineer ik data-gedreven beslissingen met een scherp oog voor high-end design voor digitale ervaringen die werken én overtuigen, en vertaald worden naar schaalbare oplossingen.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="p-8 bg-neutral-900 border border-white/5 rounded-[2.5rem] space-y-4">
+                    <h3 class="text-xl font-black italic uppercase text-[#befc28]">Missie</h3>
+                    <p class="text-white/40 text-sm leading-relaxed italic">Digitale producten ontwerpen die moeiteloos werken én visueel blijven hangen.</p>
+                </div>
+                <div class="p-8 bg-[#befc28] rounded-[2.5rem] space-y-4 text-black">
+                    <h3 class="text-xl font-black italic uppercase">Visie</h3>
+                    <p class="text-black/70 text-sm leading-relaxed font-bold italic">Sterk design ontstaat waar creativiteit en functionaliteit samenkomen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- 3. EXPERTISE MATRIX (SKILLS) MET HOVER EFFECT -->
+<section class="py-40 border-t border-white/5">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-20">
+        
+        <!-- Links: Kop -->
+        <div class="md:col-span-4 space-y-4">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-12 h-px bg-[#befc28]"></div>
+                <span class="text-[#befc28] text-[10px] font-black uppercase tracking-[0.5em]">Abilities</span>
+            </div>
+            <h2 class="text-5xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
+                SKILLS & <br /> <span class="text-transparent" style="-webkit-text-stroke: 1px white;">POWERS</span>
+            </h2>
+        </div>
+
+        <!-- Rechterkant: De Skills Grid -->
+        <div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-16">
+            
+            <div class="space-y-10">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-white/20 italic">// Technical Stack</p>
+                
+                <!-- Skill Items met Hover effect -->
+                {skills.map(skill => (
+                  <div class="group cursor-default">
+                    <div class="flex justify-between mb-3 items-end transition-transform duration-500 group-hover:translate-x-2">
+                        <span class="text-xl font-bold italic uppercase transition-colors group-hover:text-[#befc28]">{skill.name}</span>
+                        <span class="text-[#befc28] text-[10px] font-mono tracking-widest uppercase opacity-40 group-hover:opacity-100 transition-opacity">{skill.label}</span>
+                    </div>
+                    
+                    <!-- De container van het lijntje -->
+                    <div class="h-4 flex items-center w-full relative">
+                        <!-- De achtergrond lijn (donker) -->
+                        <div class="h-px w-full bg-white/10"></div>
+                        
+                        <!-- De actieve lijn (groen) -->
+                        <div 
+                          class="absolute h-px bg-[#befc28] transition-all duration-500 ease-out group-hover:h-[4px] group-hover:shadow-[0_0_25px_#befc28]" 
+                          style={`width: ${skill.level}`}
+                        ></div>
+                    </div>
+                  </div>
+                ))}
+            </div>
+
+            <!-- Soft Skills (Rechterkolom) -->
+            <div class="space-y-10">
+                <p class="text-[10px] font-bold uppercase tracking-widest text-white/20 italic">// Human Qualities</p>
+                <div class="space-y-12">
+                    <div class="flex gap-6 items-start group">
+                        <div class="text-[#befc28] text-2xl font-black italic transition-transform group-hover:scale-125 duration-500">01</div>
+                        <div>
+                            <h4 class="text-xl font-bold italic uppercase group-hover:text-[#befc28] transition-colors">Creatief Denken</h4>
+                            <p class="text-white/40 text-sm mt-2 italic leading-relaxed">Problemen oplossen door buiten de kaders te kijken.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start group">
+                        <div class="text-[#befc28] text-2xl font-black italic transition-transform group-hover:scale-125 duration-500">02</div>
+                        <div>
+                            <h4 class="text-xl font-bold italic uppercase group-hover:text-[#befc28] transition-colors">Scrum</h4>
+                            <p class="text-white/40 text-sm mt-2 italic leading-relaxed">Agile workflow en effectieve team-communicatie.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-6 items-start group">
+                        <div class="text-[#befc28] text-2xl font-black italic transition-transform group-hover:scale-125 duration-500">03</div>
+                        <div>
+                            <h4 class="text-xl font-bold italic uppercase group-hover:text-[#befc28] transition-colors">Samenwerken</h4>
+                            <p class="text-white/40 text-sm mt-2 italic leading-relaxed">Sterk in teamverband en communicatief vaardig.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+  </div>
+
+  <!-- 4. MARQUEE (Full Width) -->
+  <section class="py-40 border-y border-white/5 overflow-hidden w-full bg-black/20">
+      <div class="marquee-wrapper">
+          <div class="marquee-content animate-marquee">
+              <span class="text-[8vw] font-black italic opacity-5 mx-8 uppercase">Aesthetic is function</span>
+              <span class="text-[8vw] font-black italic text-[#befc28] mx-8 uppercase">Minimalism</span>
+              <span class="text-[8vw] font-black italic opacity-5 mx-8 uppercase">User Centered</span>
+              <span class="text-[8vw] font-black italic text-[#befc28] mx-8 uppercase">High Performance</span>
+              <!-- Dubbel voor de loop -->
+              <span class="text-[8vw] font-black italic opacity-5 mx-8 uppercase">Aesthetic is function</span>
+              <span class="text-[8vw] font-black italic text-[#befc28] mx-8 uppercase">Minimalism</span>
+              <span class="text-[8vw] font-black italic opacity-5 mx-8 uppercase">User Centered</span>
+              <span class="text-[8vw] font-black italic text-[#befc28] mx-8 uppercase">High Performance</span>
+          </div>
+      </div>
+  </section>
+
+  <Footer />
+</MainLayout>
+
+<style is:global>
+  /* GLOBALE ANIMATIE LOGICA - DIT MOET WERKEN */
+  
+  /* Marquee */
+  .marquee-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .marquee-content {
+    display: flex;
+    white-space: nowrap;
+    min-width: 100%;
+  }
+
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .animate-marquee {
+    animation: marquee-scroll 40s linear infinite;
+  }
+
+  /* Fade in */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  /* Pulse voor het groene bolletje */
+  .pulse-glow {
+    box-shadow: 0 0 10px #befc28;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.2); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* Verberg scrollbar maar behoud scroll functionaliteit */
+  ::-webkit-scrollbar { display: none; }
+</style>
